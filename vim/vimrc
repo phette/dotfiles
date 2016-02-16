@@ -9,13 +9,6 @@ if has('vim_starting')
     exec ':source ' . path . '/neobundles.vim'
 endif
 
-" Open gvim/mvim full screen with a little transparency
-if has('gui_running')
-    set columns=999
-    set lines=999
-    "set transparency=7
-endif
-
 filetype plugin indent on
 syntax on
 

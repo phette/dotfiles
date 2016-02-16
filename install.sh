@@ -7,3 +7,4 @@ ln -sfv "`pwd`/terminal/ackrc" ~/.ackrc
 
 # Vim
 ln -sfv "`pwd`/vim/vimrc" ~/.vimrc
+ln -sfv "`pwd`/vim/gvimrc" ~/.gvimrc
