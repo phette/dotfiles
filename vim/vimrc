@@ -5,7 +5,8 @@ if !1 | finish | endif
 set nocompatible
 
 if has('vim_starting')
-    source neobundles.vim
+    let path = fnamemodify(resolve(expand('<sfile>:p')), ':h')
+    exec ':source ' . path . '/neobundles.vim'
 endif
 
 " Open gvim/mvim full screen with a little transparency

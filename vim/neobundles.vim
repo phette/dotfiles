@@ -16,8 +16,6 @@ NeoBundle 'scrooloose/nerdtree'
 
 " Status line
 NeoBundle 'itchyny/lightline.vim'
-"NeoBundle 'vim-airline/vim-airline'
-"NeoBundle 'vim-airline/vim-airline-themes'
 "NeoBundle 'edkolev/tmuxline.vim'
 
 " Colors
