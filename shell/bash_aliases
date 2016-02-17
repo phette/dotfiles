@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# List directory contents
+alias ls='ls --color=auto'
+alias ll='ls -al'
+alias la='ls -AF'
+
+# Interpreters
+alias py='python'
+alias ipy='ipython'
+alias rb='ruby'
+
+alias gvim='mvim'
+alias grep='grep --color=auto --exclude=*.pyc --exclude-dir=.git'
+alias ctags='$(brew --prefix)/bin/ctags'
+alias p4merge='/Applications/p4merge.app/Contents/MacOS/p4merge'

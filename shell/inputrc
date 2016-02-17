@@ -1,2 +1,10 @@
-set completion-ignore-case On
-set colored-stats On
+#!/bin/bash
+
+# Ignore case during tab completion.
+set completion-ignore-case on
+
+# Auto list tab completions (use instead of TAB-cycling).
+set show-all-if-ambiguous on
+
+# Enable vi mode.
+set editing-mode vi

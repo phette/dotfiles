@@ -1,2 +1,11 @@
+# Always sort the files.
+--sort-files
+
+# Always color, even when piping to another program.
+--color
+
+# Color matched text red.
 --color-match=red
---pager=less -RFX
+
+# Use "less -r" as my pager.
+--pager=less -FRSX

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Make sure the gnu coreutils take precedence over the defaults.
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+
+# Make sure the gnu core utils man pages take precedence over the defaults.
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"

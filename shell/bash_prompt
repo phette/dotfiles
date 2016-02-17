@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Default prompt (e.g. [~/Documents/Repos/dotfiles] $ ).
+PS1="[\w] $ "
+
+# Use this wonderful prompt available via "brew install bash-git-prompt".
+if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+    source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
+    GIT_PROMPT_ONLY_IN_REPO=1
+    GIT_PROMPT_THEME=Custom
+fi
