@@ -1,11 +1,11 @@
 #!/bin/sh
 
 ##############################################################################
-# Bash
+# Shell
 ##############################################################################
-ln -sfv "`pwd`/bash/bash_profile" ~/.bash_profile
-ln -sfv "`pwd`/bash/inputrc" ~/.inputrc
-ln -sfv "`pwd`/bash/ackrc" ~/.ackrc
+ln -sfv "`pwd`/shell/bash_profile" ~/.bash_profile
+ln -sfv "`pwd`/shell/inputrc" ~/.inputrc
+ln -sfv "`pwd`/shell/ackrc" ~/.ackrc
 
 ##############################################################################
 # Vim
