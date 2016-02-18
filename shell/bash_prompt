@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Default prompt (e.g. [~/Documents/Repos/dotfiles] $ ).
 PS1="[\w] $ "

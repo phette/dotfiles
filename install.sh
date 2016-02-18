@@ -1,7 +1,7 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # Get the absolute path to this file.
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DIR="$(cd "$(dirname "$0")" && pwd)"
 
 # Back up neobundle.vim if it was previously installed.
 # It will be replaced with a symlink.
@@ -15,6 +15,8 @@ fi
 ln -sfv $DIR/shell/bash_profile $HOME/.bash_profile
 ln -sfv $DIR/shell/inputrc      $HOME/.inputrc
 ln -sfv $DIR/shell/ackrc        $HOME/.ackrc
+ln -sfv $DIR/git/gitconfig      $HOME/.gitconfig
+ln -sfv $DIR/git/gitignore      $HOME/.gitignore
 ln -sfv $DIR/vim/vimrc          $HOME/.vimrc
 ln -sfv $DIR/vim/gvimrc         $HOME/.gvimrc
 ln -sfv $DIR/vim/neobundle.vim  $HOME/.vim/bundle/

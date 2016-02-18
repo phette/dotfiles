@@ -1,0 +1,12 @@
+# OS X generated files
+.DS_Store
+.Trashes
+Thumbs.db
+ehthumbs.db
+
+# Vim swap files
+*.swp
+
+# Compiled source
+*.pyc
+*.so

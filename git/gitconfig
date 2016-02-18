@@ -1,0 +1,41 @@
+[include]
+    path = ~/.gitconfig.local
+
+[core]
+    editor = vim
+    excludesfiles = ~/.gitignore
+
+[push]
+    default = simple
+
+[branch]
+    autosetupmerge = always
+    autosetuprebase = always
+
+[advice]
+    statusHints = false
+
+[color]
+    ui = true
+
+[apply]
+    whitespace = nowarn
+
+[diff]
+    tool = p4merge
+
+[merge]
+    tool = p4merge
+    keepBackup = false
+
+[difftool]
+    prompt = false
+
+[difftool "p4merge"]
+    cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "\"$LOCAL\"" "\"$REMOTE\""
+
+[mergetool "p4merge"]
+    cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "\"$PWD/$BASE\"" "\"$PWD/$LOCAL\"" "\"$PWD/$REMOTE\"" "\"$PWD/$MERGED\""
+    keepTemporaries = false
+    trustExitCode = false
+    keepBackup = false
