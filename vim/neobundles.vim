@@ -21,6 +21,9 @@ NeoBundle 'itchyny/lightline.vim'
 " Colors
 NeoBundle 'flazz/vim-colorschemes'
 
+" Debugging
+NeoBundle 'joonty/vdebug'
+
 NeoBundleLazy 'nvie/vim-flake8', {
 \ 'autoload': { 'filetypes': ['python'] }
 \}
