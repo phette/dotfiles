@@ -24,6 +24,10 @@ NeoBundle 'flazz/vim-colorschemes'
 " Debugging
 NeoBundle 'joonty/vdebug'
 
+" Utils
+NeoBundle 'mileszs/ack.vim'
+NeoBundle 'rking/ag.vim'
+
 NeoBundleLazy 'nvie/vim-flake8', {
 \ 'autoload': { 'filetypes': ['python'] }
 \}

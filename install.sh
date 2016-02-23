@@ -42,6 +42,7 @@ brew install git-flow
 brew install git-lfs
 brew install grep
 brew install ack
+brew install the_silver_searcher
 brew install wget
 brew install node
 brew install python
