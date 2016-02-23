@@ -12,11 +12,44 @@ if [ -d $HOME/.vim/bundle/neobundle.vim ]; then
 fi
 
 # Symlink necessary files and directories.
-ln -sfv $DIR/shell/bash_profile $HOME/.bash_profile
-ln -sfv $DIR/shell/inputrc      $HOME/.inputrc
-ln -sfv $DIR/shell/ackrc        $HOME/.ackrc
-ln -sfv $DIR/git/gitconfig      $HOME/.gitconfig
-ln -sfv $DIR/git/gitignore      $HOME/.gitignore
-ln -sfv $DIR/vim/vimrc          $HOME/.vimrc
-ln -sfv $DIR/vim/gvimrc         $HOME/.gvimrc
-ln -sfv $DIR/vim/neobundle.vim  $HOME/.vim/bundle/
+ln -sfv $DIR/shell/bash_profile         $HOME/.bash_profile
+ln -sfv $DIR/shell/inputrc              $HOME/.inputrc
+ln -sfv $DIR/shell/ackrc                $HOME/.ackrc
+ln -sfv $DIR/shell/git-prompt-colors.sh $HOME/.git-prompt-colors.sh
+ln -sfv $DIR/git/gitconfig              $HOME/.gitconfig
+ln -sfv $DIR/git/gitignore              $HOME/.gitignore
+ln -sfv $DIR/vim/vimrc                  $HOME/.vimrc
+ln -sfv $DIR/vim/gvimrc                 $HOME/.gvimrc
+ln -sfv $DIR/vim/neobundle.vim          $HOME/.vim/bundle/
+
+# Install brew (if necessary).
+which brew
+if [[ $? != 0 ]]; then
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+else
+    brew update
+    brew upgrade
+fi
+
+# Install brew packages.
+brew install bash
+brew install bash-completion
+brew install bash-git-prompt
+brew install macvim --override-system-vim
+brew install coreutils
+brew install git
+brew install git-flow
+brew install git-lfs
+brew install grep
+brew install ack
+brew install wget
+brew install node
+brew install python
+brew install python3
+brew install go
+brew install lastpass-cli
+brew install composer
+brew install mysql
+brew install mongodb
+brew install memcached
+brew install redis
