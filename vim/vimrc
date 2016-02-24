@@ -59,6 +59,8 @@ set wildmode=list:longest
 set laststatus=2
 set noshowmode
 set mouse=a
+set splitbelow
+set splitright
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key mappings
@@ -86,8 +88,13 @@ vnoremap ˚ :m-2<CR>gv=gv
 map <Down> <C-E>
 map <Up> <C-Y>
 
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Key mappings
+" Plugin settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Call flake8 every time a Python file is saved
 "autocmd BufWritePost *.py call Flake8()
@@ -103,7 +110,3 @@ let g:ycm_autoclose_preview_window_after_insertion=1
 let g:lightline = {
 \   'colorscheme': 'wombat',
 \ }
-
-" Airline configuration
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
