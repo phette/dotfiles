@@ -10,7 +10,9 @@ alias py='python'
 alias ipy='ipython'
 alias rb='ruby'
 
-alias gvim='mvim'
 alias grep='grep --color=auto --exclude=*.pyc --exclude-dir=.git'
+alias ag='ag --color-match "0;31" --pager "less -FRSX"'
+
+alias gvim='mvim'
 alias ctags='$(brew --prefix)/bin/ctags'
 alias p4merge='/Applications/p4merge.app/Contents/MacOS/p4merge'

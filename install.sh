@@ -22,35 +22,38 @@ ln -sfv $DIR/vim/vimrc                  $HOME/.vimrc
 ln -sfv $DIR/vim/gvimrc                 $HOME/.gvimrc
 ln -sfv $DIR/vim/neobundle.vim          $HOME/.vim/bundle/
 
-# Install brew (if necessary).
+# Install brew (if necessary) and useful packages and fonts.
 which brew
 if [[ $? != 0 ]]; then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+    brew install bash
+    brew install bash-completion
+    brew install bash-git-prompt
+    brew install macvim --override-system-vim
+    brew install coreutils
+    brew install git
+    brew install git-flow
+    brew install git-lfs
+    brew install grep
+    brew install ack
+    brew install the_silver_searcher
+    brew install wget
+    brew install node
+    brew install python
+    brew install python3
+    brew install go
+    brew install composer
+    brew install mysql
+    brew install mongodb
+    brew install memcached
+    brew install redis
+    brew install lastpass-cli
+
+    brew tap caskroom/fonts
+    brew cask install font-inconsolata
+    brew cast install font-source-code-pro
 else
     brew update
     brew upgrade
 fi
-
-# Install brew packages.
-brew install bash
-brew install bash-completion
-brew install bash-git-prompt
-brew install macvim --override-system-vim
-brew install coreutils
-brew install git
-brew install git-flow
-brew install git-lfs
-brew install grep
-brew install ack
-brew install the_silver_searcher
-brew install wget
-brew install node
-brew install python
-brew install python3
-brew install go
-brew install lastpass-cli
-brew install composer
-brew install mysql
-brew install mongodb
-brew install memcached
-brew install redis
