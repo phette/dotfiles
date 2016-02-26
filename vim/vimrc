@@ -14,7 +14,7 @@ syntax on
 
 " Font
 try
-    set guifont=Inconsolata:h12
+    set guifont=Inconsolata-dz:h11
 catch
 endtry
 

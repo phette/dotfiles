@@ -51,8 +51,7 @@ if [[ $? != 0 ]]; then
     brew install lastpass-cli
 
     brew tap caskroom/fonts
-    brew cask install font-inconsolata
-    brew cast install font-source-code-pro
+    brew cask install font-inconsolata-dz
 else
     brew update
     brew upgrade
