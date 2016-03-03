@@ -4,63 +4,149 @@ if !1 | finish | endif
 " Improvement
 set nocompatible
 
+" Initialize bundles
 if has('vim_starting')
     let path = fnamemodify(resolve(expand('<sfile>:p')), ':h')
     exec ':source ' . path . '/neobundles.vim'
 endif
 
-filetype plugin indent on
-syntax on
-
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Font
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 try
-    set guifont=Inconsolata-dz:h11
+    set guifont=Inconsolata-dz:h10
 catch
 endtry
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Colors
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 try
     colorscheme desertEx
 catch
     colorscheme desert
 endtry
-"highlight Pmenu ctermfg=0 ctermbg=13 guifg=#e0e2e4 guibg=#66747b
-"highlight PmenuSel ctermfg=8 ctermbg=0 guibg=DarkGrey
 
+" Enable syntax highlighting
+syntax on
+
+" Override desertEx's cursor line (lighter color and no underline)
+hi CursorLine term=none cterm=none ctermbg=239 guibg=Grey30
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" General
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Keep 1000 lines of history
 set history=1000
+
+" Detect external changes to files while they're opened in vim
 set autoread
+
+" Show the cursor line
 set cursorline
-set so=7
-set ruler
-set cmdheight=2
-set hid
-set tabstop=8
-set softtabstop=4
-set shiftwidth=4
-set expandtab
-set smarttab
-set autoindent
-set backspace=indent,eol,start
+
+" Enable line numbers
 set number
+
+" Show the line and column number of the cursor position
+set ruler
+
+" Don't wrap lines
 set nowrap
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
-set showcmd
-set hidden
-set modeline
-set novisualbell
-set noerrorbells
-set nobackup
-set nowb
-set noswapfile
-set wildmenu
-set wildmode=list:longest
-set laststatus=2
+
+" Don't show modes (visual, insert, etc). We have lightline for that.
 set noshowmode
+
+" Use 2 screen lines for the command line
+set cmdheight=2
+
+" No bells!
+set noerrorbells novisualbell
+
+" Redraw only when necessary
+set lazyredraw
+
+" Enable the mouse in terminal vim
 set mouse=a
+
+" Open horizontal splits below the active pane
 set splitbelow
+
+" Open vertical splits to the right of the active pane
 set splitright
+
+" Scroll file with cursor 7 lines from the top or bottom of the file
+set so=7
+
+" Always show status lines
+set laststatus=2
+
+"set autoindent
+set backspace=indent,eol,start
+
+" Show command in bottom bar
+set showcmd
+
+" Hide buffers instead of closing them
+set hidden
+
+" Enable mode line
+set modeline
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Tabs and indentation
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Load filetype-specific indent files
+filetype indent on
+
+" Number of visual spaces per tab
+set tabstop=4
+
+" Number of spaces in tab when editing
+set softtabstop=4 shiftwidth=4
+
+" Replace tabs with spaces
+set expandtab
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Search
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Highlight all matched patterns while searching
+set hlsearch
+
+" Search as characters are entered
+set incsearch
+
+" Ignore case while searching
+set ignorecase
+
+" With ignorecase enabled, patterns with uppercase letters are case sensitive
+set smartcase
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Swaps and backups
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Don't create backup files
+set nobackup nowritebackup
+
+" Don't create swap files
+set noswapfile
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Wild menu
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Enable auto-completion on command line
+set wildmenu
+
+" List all matches and complete till longest common string
+set wildmode=list:longest
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key mappings
@@ -93,9 +179,20 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+if exists(":Tabularize")
+    nmap <Leader>a= :Tabularize /=<CR>
+    vmap <Leader>a= :Tabularize /=<CR>
+    nmap <Leader>a: :Tabularize /:\zs<CR>
+    vmap <Leader>a: :Tabularize /:\zs<CR>
+endif
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Load filetype-specific plugin files
+filetype plugin on
+
 " Call flake8 every time a Python file is saved
 "autocmd BufWritePost *.py call Flake8()
 
