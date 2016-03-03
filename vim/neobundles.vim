@@ -24,6 +24,9 @@ NeoBundle 'flazz/vim-colorschemes'
 " Debugging
 NeoBundle 'joonty/vdebug'
 
+" Alignment
+NeoBundle 'godlygeek/tabular'
+
 " Utils
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'rking/ag.vim'
