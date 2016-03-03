@@ -53,3 +53,5 @@
     ci = commit
     diffc = diff --cached
     diffst = diff --stat
+    fp = fetch --prune
+    edit = !mvim -O $(git status --short | awk '$1 ~ /^M|A|U/ {print $2}')
