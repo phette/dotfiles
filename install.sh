@@ -15,7 +15,6 @@ fi
 ln -sfv $DIR/shell/bash_profile         $HOME/.bash_profile
 ln -sfv $DIR/shell/inputrc              $HOME/.inputrc
 ln -sfv $DIR/shell/ackrc                $HOME/.ackrc
-ln -sfv $DIR/shell/git-prompt-colors.sh $HOME/.git-prompt-colors.sh
 ln -sfv $DIR/shell/liquidpromptrc       $HOME/.liquidpromptrc
 ln -sfv $DIR/git/gitconfig              $HOME/.gitconfig
 ln -sfv $DIR/git/gitignore              $HOME/.gitignore
@@ -30,7 +29,6 @@ if [[ $? != 0 ]]; then
 
     brew install bash
     brew install bash-completion
-    brew install bash-git-prompt
     brew install liquidprompt
     brew install macvim --override-system-vim
     brew install coreutils
