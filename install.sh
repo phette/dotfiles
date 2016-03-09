@@ -29,7 +29,6 @@ if [[ $? != 0 ]]; then
 
     brew install bash
     brew install bash-completion
-    brew install liquidprompt
     brew install macvim --override-system-vim
     brew install coreutils
     brew install git
