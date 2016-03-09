@@ -84,8 +84,8 @@ set so=7
 " Always show status lines
 set laststatus=2
 
-"set autoindent
-set backspace=indent,eol,start
+" Configure backspace to behave sanely
+set backspace=eol,start,indent
 
 " Show command in bottom bar
 set showcmd
@@ -95,6 +95,9 @@ set hidden
 
 " Enable mode line
 set modeline
+
+" Don't automatically add line separators to the end of files
+set noeol
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tabs and indentation
