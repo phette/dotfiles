@@ -47,3 +47,6 @@ fi
 
 unset SOURCE
 unset DIR
+
+# Increase the max number of open file descriptors allowed.
+ulimit -n 4096
