@@ -32,7 +32,7 @@ endtry
 " Enable syntax highlighting
 syntax on
 
-" Override desertEx's cursor line (lighter color and no underline)
+" Override desert[Ex]'s cursor line (lighter color and no underline)
 hi CursorLine term=none cterm=none ctermbg=239 guibg=Grey30
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -171,16 +171,22 @@ inoremap ˚ <Esc>:m-2<CR>==gi
 vnoremap ∆ :m'>+<CR>gv=gv
 vnoremap ˚ :m-2<CR>gv=gv
 
+" Execute the active Python script with the F5 key
 "nnoremap <silent> <F5> :!clear;python %<CR>
 
-" Shift + up/down scrolls the page 1 line at a time
+" Up/Down arrows scroll the page 1 line at a time
 map <Down> <C-E>
 map <Up> <C-Y>
 
+" Easier pane switching
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+nnoremap <C-w>h <nop>
+nnoremap <C-w>j <nop>
+nnoremap <C-w>k <nop>
+nnoremap <C-w>l <nop>
 
 if exists(":Tabularize")
     nmap <Leader>a= :Tabularize /=<CR>
@@ -202,7 +208,7 @@ filetype plugin on
 " Close vim if the only window left open is NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" Close YCM preview window often
+" Close YouCompleteMe preview window often
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_autoclose_preview_window_after_insertion=1
 
