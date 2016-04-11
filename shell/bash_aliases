@@ -6,14 +6,21 @@ alias ll='ls -al'
 alias la='ls -AF'
 alias sl='ls'
 
+# Editor
+alias gvim='mvim'
+
 # Interpreters
 alias py='python'
 alias ipy='ipython'
 alias rb='ruby'
 
+# Grep/search
 alias grep='grep --color=auto --exclude=*.pyc --exclude-dir=.git'
 alias ag='ag --color-match "0;31" --pager "less -FRSX"'
 
-alias gvim='mvim'
+# Docker
+alias docker_prune_images="docker images | awk '/<none>/ { print $3 }' | xargs docker rmi"
+
+# Misc
 alias ctags='$(brew --prefix)/bin/ctags'
 alias p4merge='/Applications/p4merge.app/Contents/MacOS/p4merge'
