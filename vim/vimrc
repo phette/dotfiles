@@ -99,6 +99,9 @@ set modeline
 " Don't automatically add line separators to the end of files
 set noeol
 
+" Copy/paste using system clipboard
+set clipboard=unnamed
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tabs and indentation
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -216,3 +219,7 @@ let g:ycm_autoclose_preview_window_after_insertion=1
 let g:lightline = {
 \   'colorscheme': 'wombat',
 \ }
+
+" CtrlP configuration
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'

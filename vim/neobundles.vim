@@ -30,6 +30,7 @@ NeoBundle 'godlygeek/tabular'
 " Utils
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'rking/ag.vim'
+NeoBundle 'ctrlpvim/ctrlp.vim'
 
 NeoBundleLazy 'nvie/vim-flake8', {
 \ 'autoload': { 'filetypes': ['python'] }
