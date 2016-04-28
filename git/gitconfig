@@ -51,6 +51,7 @@
     cp = cherry-pick
     cl = clone
     ci = commit
+    fpush = push --force
     diffc = diff --cached
     diffst = diff --stat
     fp = fetch --prune
