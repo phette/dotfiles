@@ -36,6 +36,7 @@ call dein#add('pearofducks/ansible-vim')
 " Python
 call dein#add('nvie/vim-flake8')
 call dein#add('jmcantrell/vim-virtualenv')
+call dein#add('hynek/vim-python-pep8-indent')
 
 " Golang
 call dein#add('fatih/vim-go')
