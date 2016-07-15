@@ -216,9 +216,11 @@ filetype plugin on
 " Close vim if the only window left open is NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" Close YouCompleteMe preview window often
-let g:ycm_autoclose_preview_window_after_completion=1
-let g:ycm_autoclose_preview_window_after_insertion=1
+" Enable deoplete on startup
+let g:deoplete#enable_at_startup = 1
+
+" Change cursor shape on insert mode
+":let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
 " Lightline configuration
 let g:lightline = {
