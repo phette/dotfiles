@@ -1,46 +1,48 @@
-set runtimepath^=~/.vim/bundle/neobundle.vim
-call neobundle#begin(expand('~/.vim/bundle/'))
+set runtimepath^=~/.vim/repos/github.com/Shougo/dein.vim
+call dein#begin(expand('~/.vim/'))
 
-" Let NeoBundle manage NeoBundle
-NeoBundleFetch 'Shougo/neobundle.vim'
+" Let dein manage dein
+call dein#add('Shougo/dein.vim')
 
 " Source control
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'airblade/vim-gitgutter'
+call dein#add('tpope/vim-fugitive')
+call dein#add('airblade/vim-gitgutter')
 
 " Auto-completion
-NeoBundle 'Valloric/YouCompleteMe'
+call dein#add('Shougo/deoplete.nvim')
 
 " File browsing
-NeoBundle 'scrooloose/nerdtree'
+call dein#add('scrooloose/nerdtree')
 
 " Status line
-NeoBundle 'itchyny/lightline.vim'
-"NeoBundle 'edkolev/tmuxline.vim'
+call dein#add('itchyny/lightline.vim')
 
 " Colors
-NeoBundle 'flazz/vim-colorschemes'
+call dein#add('flazz/vim-colorschemes')
+call dein#add('solarnz/thrift.vim')
 
 " Debugging
-NeoBundle 'joonty/vdebug'
+call dein#add('joonty/vdebug')
 
 " Alignment
-NeoBundle 'godlygeek/tabular'
+call dein#add('godlygeek/tabular')
 
 " Utils
-NeoBundle 'mileszs/ack.vim'
-NeoBundle 'rking/ag.vim'
-NeoBundle 'ctrlpvim/ctrlp.vim'
+call dein#add('mileszs/ack.vim')
+call dein#add('rking/ag.vim')
+call dein#add('ctrlpvim/ctrlp.vim')
+call dein#add('pearofducks/ansible-vim')
 
-NeoBundleLazy 'nvie/vim-flake8', {
-\ 'autoload': { 'filetypes': ['python'] }
-\}
-NeoBundleLazy 'jmcantrell/vim-virtualenv', {
-\ 'autoload': {'filetypes': ['python']}
-\}
-NeoBundleLazy 'fatih/vim-go', {
-\ 'autoload': { 'filetypes': ['go'] }
-\}
+" Python
+call dein#add('nvie/vim-flake8')
+call dein#add('jmcantrell/vim-virtualenv')
 
-call neobundle#end()
-NeoBundleCheck
+" Golang
+call dein#add('fatih/vim-go')
+
+call dein#end()
+
+" Install new plugins on startup
+if dein#check_install()
+    call dein#install()
+endif

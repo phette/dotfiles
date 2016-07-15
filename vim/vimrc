@@ -2,7 +2,9 @@
 if !1 | finish | endif
 
 " Improvement
-set nocompatible
+if &compatible
+    set nocompatible
+endif
 
 " Initialize bundles
 if has('vim_starting')
@@ -100,7 +102,7 @@ set modeline
 set noeol
 
 " Copy/paste using system clipboard
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tabs and indentation
@@ -153,6 +155,9 @@ set wildmenu
 
 " List all matches and complete till longest common string
 set wildmode=list:longest
+
+" Ignore case for tab completion in command line
+set wildignorecase
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key mappings
