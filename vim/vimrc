@@ -216,11 +216,15 @@ filetype plugin on
 " Close vim if the only window left open is NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" Enable deoplete on startup
-let g:deoplete#enable_at_startup = 1
+" Neovim Python coniguration
+let g:python_host_prog = '/usr/local/bin/python'
+let g:python3_host_prog = '/usr/local/bin/python3'
 
 " Change cursor shape on insert mode
 ":let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+"
+" Enable deoplete on startup
+let g:deoplete#enable_at_startup = 1
 
 " Lightline configuration
 let g:lightline = {
