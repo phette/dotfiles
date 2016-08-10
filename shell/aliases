@@ -1,21 +1,19 @@
-#!/usr/bin/env bash
-
 # List directory contents
-alias ls='ls --color=auto'
-alias ll='ls -al'
-alias la='ls -AF'
-alias sl='ls'
+alias ls="ls --color=auto"
+alias ll="ls -al"
+alias la="ls -AF"
+alias sl="ls"
 
 # Editor
-alias vim='nvim'
+alias vim="nvim"
 
 # Interpreters
-alias py='python'
-alias ipy='ipython'
-alias rb='ruby'
+alias py="python"
+alias ipy="ipython"
+alias rb="ruby"
 
 # Grep/search
-alias grep='grep --color=auto --exclude=*.pyc --exclude-dir=.git'
+alias grep="grep --color=auto --exclude='*.pyc' --exclude-dir=.git"
 alias ag='ag --color-match "0;31" --pager "less -FRSX"'
 
 # Docker

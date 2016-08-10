@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 # Enable colors in the prompt.
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
