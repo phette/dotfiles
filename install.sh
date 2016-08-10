@@ -5,6 +5,7 @@ which brew
 if [[ $? != 0 ]]; then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+    brew install zsh
     brew install bash
     brew install bash-completion
     brew install neovim/neovim/neovim
@@ -46,6 +47,7 @@ sh installer.sh ~/.vim
 DIR="$(cd "$(dirname "$0")" && pwd)"
 
 # Symlink necessary files and directories.
+ln -sfv $DIR/shell/zshrc                $HOME/.zshrc
 ln -sfv $DIR/shell/bash_profile         $HOME/.bash_profile
 ln -sfv $DIR/shell/inputrc              $HOME/.inputrc
 ln -sfv $DIR/shell/ackrc                $HOME/.ackrc

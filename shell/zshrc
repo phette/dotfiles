@@ -1,0 +1,16 @@
+# Determine the real path of this file
+# so that it can be sourced from anywhere.
+DIR=${0:A:h}
+
+# Basic dotfiles.
+source $DIR/exports
+source $DIR/aliases
+source $DIR/paths
+source $DIR/functions/*
+
+[[ $- = *i* ]] && source $DIR/liquidprompt/liquidprompt
+
+unset DIR
+
+# Increase the max number of open file descriptors allowed.
+ulimit -n 4096
