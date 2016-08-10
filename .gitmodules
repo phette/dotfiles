@@ -4,3 +4,6 @@
 [submodule "shell/liquidprompt"]
 	path = shell/liquidprompt
 	url = git@github.com:nojhan/liquidprompt.git
+[submodule "shell/oh-my-zsh"]
+	path = shell/oh-my-zsh
+	url = git@github.com:robbyrussell/oh-my-zsh.git
