@@ -13,20 +13,20 @@ while [ -h "$SOURCE" ]; do
 
   # If $SOURCE was a relative symlink, we need to resolve it
   # relative to the path where the symlink file was located.
-  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE" 
+  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
 done
 
 # This is the real path to this file.
-DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+DOTFILES_DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 # Basic dotfiles.
-source $DIR/exports
-source $DIR/aliases
-source $DIR/paths
-source $DIR/functions/*
+source $DOTFILES_DIR/exports
+source $DOTFILES_DIR/aliases
+source $DOTFILES_DIR/paths
+source $DOTFILES_DIR/functions/*
 
 # Only load Liquid Prompt in interactive shells (not from a script or scp).
-[[ $- = *i* ]] && source "$DIR/liquidprompt/liquidprompt"
+[[ $- = *i* ]] && source "$DOTFILES_DIR/liquidprompt/liquidprompt"
 
 # Bash tab completion.
 if [ -f "$(brew --prefix)/etc/bash_completion" ]; then

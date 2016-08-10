@@ -1,16 +1,40 @@
 # Determine the real path of this file
 # so that it can be sourced from anywhere.
-DIR=${0:A:h}
+SOURCE=${(%):-%N}
+
+# Resolve $SOURCE until the file is no longer a symlink.
+while [ -h "$SOURCE" ]; do
+  DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+  SOURCE="$(readlink "$SOURCE")"
+
+  # If $SOURCE was a relative symlink, we need to resolve it
+  # relative to the path where the symlink file was located.
+  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
+done
+
+# This is the real path to this file.
+DOTFILES_DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+
+# Path to oh-my-zsh 
+export ZSH=$DOTFILES_DIR/oh-my-zsh
+
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="agnoster"
 
 # Basic dotfiles.
-source $DIR/exports
-source $DIR/aliases
-source $DIR/paths
-source $DIR/functions/*
+source $DOTFILES_DIR/exports
+source $DOTFILES_DIR/aliases
+source $DOTFILES_DIR/paths
+source $DOTFILES_DIR/functions/*
 
-[[ $- = *i* ]] && source $DIR/liquidprompt/liquidprompt
+#[[ $- = *i* ]] && source $DIR/liquidprompt/liquidprompt
 
 unset DIR
 
 # Increase the max number of open file descriptors allowed.
 ulimit -n 4096
+
+source $ZSH/oh-my-zsh.sh
