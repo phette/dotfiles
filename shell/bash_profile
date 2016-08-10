@@ -22,9 +22,9 @@ done
 DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 # Basic dotfiles.
-source $DIR/bash_exports
-source $DIR/bash_aliases
-source $DIR/bash_paths
+source $DIR/exports
+source $DIR/aliases
+source $DIR/paths
 source $DIR/functions/*
 
 # Only load Liquid Prompt in interactive shells (not from a script or scp).
