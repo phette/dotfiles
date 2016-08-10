@@ -57,3 +57,6 @@ ln -sfv $DIR/git/gitignore              $HOME/.gitignore
 ln -sfv $DIR/.vim                       $HOME/.config/nvim
 ln -sfv $DIR/vim/vimrc                  $HOME/.config/nvim/init.vim
 ln -sfv $DIR/vim/neobundle.vim          $HOME/.vim/bundle/
+
+# Makei default shell is zsh.
+chsh -s $(which zsh)
