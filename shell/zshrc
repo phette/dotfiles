@@ -18,17 +18,20 @@ unset DIR
 # Path to oh-my-zsh.
 export ZSH=$DOTFILES_DIR/oh-my-zsh
 
-# zsh theme.
-ZSH_THEME="robbyrussell"
+# oh-my-zsh custom directory (because oh-my-zsh is submoduled).
+ZSH_CUSTOM=$DOTFILES_DIR/oh-my-zsh.custom
+
+# oh-my-zsh theme.
+ZSH_THEME="powerlevel9k/powerlevel9k"
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status dir)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vcs virtualenv)
 
 # zsh plugins.
 plugins=(
     git
-    jira
     python
     virtualenv
     virtualenvwrapper
-    colorize
     docker
     docker-compose
     extract
@@ -36,8 +39,6 @@ plugins=(
     vi-mode
     zsh_reload
     colored-man-pages
-    copydir
-    copyfile
 )
 
 # Show timestamps in zsh history.
@@ -63,10 +64,6 @@ export MANPAGER="less -X"
 export PATH="$(brew --prefix)/sbin:$PATH"
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-
-# JIRA command line.
-export JIRA_URL="https://my.rewardstyle.com"
-export JIRA_NAME="nathan.phetteplace"
 
 # Aliases.
 alias ls="ls --color -G"
