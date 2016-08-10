@@ -18,7 +18,6 @@ done
 
 # This is the real path to this file.
 DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
-echo $DIR
 
 # Basic dotfiles.
 source $DIR/exports
