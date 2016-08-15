@@ -13,6 +13,8 @@ done
 
 # This is the real path to this file.
 DOTFILES_DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+
+unset SOURCE
 unset DIR
 
 # Path to oh-my-zsh.
@@ -73,7 +75,7 @@ alias rb="ruby"
 alias docker_prune_images="docker images | awk '/<none>/ { print $3 }' | xargs docker rmi"
 alias vim="nvim"
 alias ag='ag --color-match "0;31" --pager "less -FRSX"'
-alias grep="--color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} --exclude='*.pyc'"
+alias grep="grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} --exclude='*.pyc'"
 
 # Increase the max number of open file descriptors allowed.
 ulimit -n 4096

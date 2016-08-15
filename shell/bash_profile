@@ -19,6 +19,9 @@ done
 # This is the real path to this file.
 DOTFILES_DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
+unset SOURCE
+unset DIR
+
 # Basic dotfiles.
 source $DOTFILES_DIR/exports
 source $DOTFILES_DIR/aliases
@@ -43,8 +46,6 @@ if [ -f $HOME/.bash_profile.local ]; then
     source $HOME/.bash_profile.local
 fi
 
-unset SOURCE
-unset DIR
 
 # Increase the max number of open file descriptors allowed.
 ulimit -n 4096
