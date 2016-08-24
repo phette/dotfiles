@@ -36,6 +36,7 @@ plugins=(
     virtualenvwrapper
     docker
     docker-compose
+    aws
     extract
     themes
     vi-mode
