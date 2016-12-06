@@ -23,6 +23,9 @@ export ZSH=$DOTFILES_DIR/oh-my-zsh
 # oh-my-zsh custom directory (because oh-my-zsh is submoduled).
 ZSH_CUSTOM=$DOTFILES_DIR/oh-my-zsh.custom
 
+# Disable oh-my-zsh auto updates.
+DISABLE_AUTO_UPDATE=true
+
 # oh-my-zsh theme.
 ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status dir)
