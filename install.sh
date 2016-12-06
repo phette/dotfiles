@@ -18,8 +18,7 @@ if [[ $? != 0 ]]; then
     brew install the_silver_searcher
     brew install wget
     brew install node
-    brew install python
-    brew install python3
+    brew install pyenv
     brew install go
     brew install composer
     brew install mysql

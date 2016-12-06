@@ -32,8 +32,6 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vcs virtualenv)
 plugins=(
     git
     python
-    virtualenv
-    virtualenvwrapper
     docker
     docker-compose
     aws
@@ -53,12 +51,6 @@ source $ZSH/oh-my-zsh.sh
 # Make neovim the default editor.
 export VISUAL=nvim
 export EDITOR="$VISUAL"
-
-# Docker configuration.
-export DOCKER_TLS_VERIFY="1"
-export DOCKER_HOST="tcp://192.168.99.100:2376"
-export DOCKER_CERT_PATH="$HOME/.docker/machine/machines/default"
-export DOCKER_MACHINE_NAME="default"
 
 # Don't clear the screen after quitting a man page.
 export MANPAGER="less -X"
@@ -80,3 +72,7 @@ alias grep="grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} --exclude='
 
 # Increase the max number of open file descriptors allowed.
 ulimit -n 4096
+
+# Initialize pyenv and pyenv-virtualenv.
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
