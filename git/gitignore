@@ -10,3 +10,6 @@ ehthumbs.db
 # Compiled source
 *.pyc
 *.so
+
+# PyEnv files
+# .python-version
