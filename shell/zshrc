@@ -51,6 +51,9 @@ HIST_STAMPS="mm/dd/yyyy"
 # Start oh-my-zsh.
 source $ZSH/oh-my-zsh.sh
 
+# Don't share history.
+unsetopt share_history
+
 # Make neovim the default editor.
 export VISUAL=nvim
 export EDITOR="$VISUAL"
