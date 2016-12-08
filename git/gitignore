@@ -12,4 +12,4 @@ ehthumbs.db
 *.so
 
 # PyEnv files
-# .python-version
+*.python-version

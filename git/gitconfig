@@ -3,7 +3,7 @@
 
 [core]
     editor = nvim
-    excludesfiles = ~/.gitignore
+    excludesfile = ~/.gitignore
 
 [push]
     default = simple
