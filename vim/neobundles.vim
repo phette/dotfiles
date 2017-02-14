@@ -10,6 +10,7 @@ call dein#add('airblade/vim-gitgutter')
 
 " Auto-completion
 call dein#add('Shougo/deoplete.nvim')
+call dein#add('zchee/deoplete-jedi')
 
 " File browsing
 call dein#add('scrooloose/nerdtree')
