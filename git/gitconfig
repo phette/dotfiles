@@ -3,7 +3,7 @@
 
 [core]
     editor = nvim
-    excludesfile = ~/.gitignore
+    excludesfile = /Users/nathanphetteplace/.gitignore
 
 [push]
     default = simple
@@ -20,25 +20,6 @@
 
 [apply]
     whitespace = nowarn
-
-[diff]
-    tool = p4merge
-
-[merge]
-    tool = p4merge
-    keepBackup = false
-
-[difftool]
-    prompt = false
-
-[difftool "p4merge"]
-    cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "\"$LOCAL\"" "\"$REMOTE\""
-
-[mergetool "p4merge"]
-    cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "\"$PWD/$BASE\"" "\"$PWD/$LOCAL\"" "\"$PWD/$REMOTE\"" "\"$PWD/$MERGED\""
-    keepTemporaries = false
-    trustExitCode = false
-    keepBackup = false
 
 [alias]
     st = status -s

@@ -13,3 +13,6 @@ ehthumbs.db
 
 # PyEnv files
 *.python-version
+
+# Misc
+*.log
