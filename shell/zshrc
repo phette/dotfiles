@@ -25,24 +25,25 @@ ZSH_CUSTOM=$DOTFILES_DIR/oh-my-zsh.custom
 
 # Disable oh-my-zsh auto updates.
 DISABLE_AUTO_UPDATE=true
+DISABLE_UPDATE_PROMPT=true
 
 # oh-my-zsh theme.
-ZSH_THEME="powerlevel9k/powerlevel9k"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status dir)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vcs virtualenv)
+#ZSH_THEME="powerlevel9k/powerlevel9k"
+#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status dir)
+#POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vcs virtualenv)
+ZSH_THEME="pure"
 
 # zsh plugins.
 plugins=(
     git
     python
     docker
-    docker-compose
-    aws
     extract
     themes
     vi-mode
     zsh_reload
     colored-man-pages
+    zsh-syntax-highlighting
 )
 
 # Show timestamps in zsh history.
