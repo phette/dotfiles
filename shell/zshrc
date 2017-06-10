@@ -37,6 +37,7 @@ plugins=(
     docker
     extract
     themes
+    aws
     vi-mode
     zsh_reload
     colored-man-pages
@@ -69,6 +70,7 @@ export ANSIBLE_VAULT_PASSWORD_FILE="~/.ansible/vault-pass.txt"
 
 # Aliases.
 alias ls="ls --color -G"
+alias cls="clear; ls"
 alias py="python"
 alias ipy="ipython"
 alias rb="ruby"
