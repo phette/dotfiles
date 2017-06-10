@@ -28,9 +28,6 @@ DISABLE_AUTO_UPDATE=true
 DISABLE_UPDATE_PROMPT=true
 
 # oh-my-zsh theme.
-#ZSH_THEME="powerlevel9k/powerlevel9k"
-#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status dir)
-#POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vcs virtualenv)
 ZSH_THEME="pure"
 
 # zsh plugins.
