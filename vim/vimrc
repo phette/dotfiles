@@ -239,3 +239,17 @@ let g:lightline = {
 " CtrlP configuration
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
+" Automatically decrypt and encrypt ansible vault files
+augroup ansiblevault
+  autocmd!
+  autocmd BufReadPre,FileReadPre vault.yml,*_vault.yml setlocal ft=ansible
+  autocmd BufReadPre,FileReadPre vault.yml,*_vault.yml setlocal viminfo=
+  autocmd BufReadPre,FileReadPre vault.yml,*_vault.yml setlocal noswapfile noundofile nobackup
+  autocmd BufReadPost,FileReadPost vault.yml,*_vault.yml echom 'Decrypting ...'
+  autocmd BufReadPost,FileReadPost vault.yml,*_vault.yml silent %!ansible-vault decrypt
+  autocmd BufWritePre,FileWritePre vault.yml,*_vault.yml echom 'Encrypting ...'
+  autocmd BufWritePre,FileWritePre vault.yml,*_vault.yml silent %!ansible-vault encrypt
+  autocmd BufWritePost,FileWritePost vault.yml,*_vault.yml silent undo
+  autocmd BufWritePost,FileWritePost vault.yml,*_vault.yml silent setlocal nomodified
+augroup END
