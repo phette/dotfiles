@@ -227,9 +227,9 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 
 " Change cursor shape on insert mode
 ":let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-"
+
 " Enable deoplete on startup
-let g:deoplete#enable_at_startup = 1
+call deoplete#enable()
 
 " Lightline configuration
 let g:lightline = {
