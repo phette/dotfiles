@@ -20,7 +20,6 @@ call dein#add('itchyny/lightline.vim')
 
 " Colors
 call dein#add('flazz/vim-colorschemes')
-call dein#add('solarnz/thrift.vim')
 
 " Debugging
 call dein#add('joonty/vdebug')
@@ -29,15 +28,13 @@ call dein#add('joonty/vdebug')
 call dein#add('godlygeek/tabular')
 
 " Utils
-call dein#add('mileszs/ack.vim')
+call dein#add('ntpeters/vim-better-whitespace')
 call dein#add('rking/ag.vim')
 call dein#add('ctrlpvim/ctrlp.vim')
 call dein#add('pearofducks/ansible-vim')
 
 " Python
 call dein#add('nvie/vim-flake8')
-call dein#add('jmcantrell/vim-virtualenv')
-call dein#add('hynek/vim-python-pep8-indent')
 
 " Golang
 call dein#add('fatih/vim-go')
