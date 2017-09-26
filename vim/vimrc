@@ -222,8 +222,8 @@ filetype plugin on
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Neovim Python coniguration
-let g:python_host_prog = '/usr/local/bin/python'
-let g:python3_host_prog = '/usr/local/bin/python3'
+let g:python_host_prog = $HOME.'/.pyenv/versions/neovim2/bin/python'
+let g:python3_host_prog = $HOME.'/.pyenv/versions/neovim3/bin/python'
 
 " Change cursor shape on insert mode
 ":let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
