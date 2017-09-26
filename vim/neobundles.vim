@@ -1,45 +1,51 @@
-set runtimepath^=~/.vim/repos/github.com/Shougo/dein.vim
-call dein#begin(expand('~/.vim/'))
+set runtimepath+=~/.vim/bundles/repos/github.com/Shougo/dein.vim
 
-" Let dein manage dein
-call dein#add('Shougo/dein.vim')
+if dein#load_state(expand('~/.vim/bundles/'))
+    call dein#begin(expand('~/.vim/bundles/'))
 
-" Source control
-call dein#add('tpope/vim-fugitive')
-call dein#add('airblade/vim-gitgutter')
+    " Let dein manage dein
+    call dein#add('Shougo/dein.vim')
+    call dein#add('Shougo/denite.nvim')
 
-" Auto-completion
-call dein#add('Shougo/deoplete.nvim')
-call dein#add('zchee/deoplete-jedi')
+    " Source control
+    call dein#add('tpope/vim-fugitive')
+    call dein#add('airblade/vim-gitgutter')
 
-" File browsing
-call dein#add('scrooloose/nerdtree')
+    " Auto-completion
+    call dein#add('Shougo/deoplete.nvim')
+    call dein#add('zchee/deoplete-jedi')
 
-" Status line
-call dein#add('itchyny/lightline.vim')
+    " File browsing
+    call dein#add('scrooloose/nerdtree')
 
-" Colors
-call dein#add('flazz/vim-colorschemes')
+    " Status line
+    call dein#add('itchyny/lightline.vim')
 
-" Debugging
-call dein#add('joonty/vdebug')
+    " Colors
+    call dein#add('flazz/vim-colorschemes')
 
-" Alignment
-call dein#add('godlygeek/tabular')
+    " Debugging
+    call dein#add('joonty/vdebug')
 
-" Utils
-call dein#add('ntpeters/vim-better-whitespace')
-call dein#add('rking/ag.vim')
-call dein#add('ctrlpvim/ctrlp.vim')
-call dein#add('pearofducks/ansible-vim')
+    " Alignment
+    call dein#add('godlygeek/tabular')
 
-" Python
-call dein#add('nvie/vim-flake8')
+    " Utils
+    call dein#add('ntpeters/vim-better-whitespace')
+    call dein#add('rking/ag.vim')
+    call dein#add('ctrlpvim/ctrlp.vim')
+    call dein#add('pearofducks/ansible-vim')
 
-" Golang
-call dein#add('fatih/vim-go')
+    " Python
+    call dein#add('nvie/vim-flake8')
+    call dein#add('vim-scripts/indentpython.vim')
 
-call dein#end()
+    " Golang
+    call dein#add('fatih/vim-go')
+
+    call dein#end()
+    call dein#save_state()
+endif
 
 " Install new plugins on startup
 if dein#check_install()
