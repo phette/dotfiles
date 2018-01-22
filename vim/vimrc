@@ -121,6 +121,7 @@ set softtabstop=4 shiftwidth=4
 set expandtab
 
 " File specific tab settings
+autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 autocmd Filetype json setlocal ts=2 sts=2 sw=2
 autocmd Filetype yml setlocal ts=2 sts=2 sw=2
 autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
@@ -225,9 +226,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let g:python_host_prog = $HOME.'/.pyenv/versions/neovim2/bin/python'
 let g:python3_host_prog = $HOME.'/.pyenv/versions/neovim3/bin/python'
 
-" Change cursor shape on insert mode
-":let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-
 " Enable deoplete on startup
 call deoplete#enable()
 
@@ -239,6 +237,18 @@ let g:lightline = {
 " CtrlP configuration
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
+" vim-javascript settings
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
+let g:javascript_plugin_flow = 1
+
+" vim-mustache-handlebars settings
+let g:mustache_abbreviations = 1
+
+" tern settings
+let g:tern#command = ["tern"]
+let g:tern#arguments = ["--persistent"]
 
 " Automatically decrypt and encrypt ansible vault files
 augroup ansiblevault

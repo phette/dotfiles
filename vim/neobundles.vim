@@ -24,21 +24,36 @@ if dein#load_state(expand('~/.vim/bundles/'))
     " Colors
     call dein#add('flazz/vim-colorschemes')
 
-    " Debugging
-    call dein#add('joonty/vdebug')
-
     " Alignment
     call dein#add('godlygeek/tabular')
 
-    " Utils
+    " Highlight erroneous whitespace
     call dein#add('ntpeters/vim-better-whitespace')
+
+    " Search
     call dein#add('rking/ag.vim')
     call dein#add('ctrlpvim/ctrlp.vim')
+
+    " Open terminal buffer in split terminal
+    "call dein#add('vimlab/split-term.vim')
+
+    " Ansible
     call dein#add('pearofducks/ansible-vim')
 
     " Python
     call dein#add('nvie/vim-flake8')
     call dein#add('vim-scripts/indentpython.vim')
+
+    " Javascript
+    call dein#add('pangloss/vim-javascript')
+    call dein#add('ternjs/tern_for_vim', {'do': 'npm install'})
+    call dein#add('carlitux/deoplete-ternjs', {'do': 'npm install -g tern'})
+
+    " Node.js
+    call dein#add('moll/vim-node')
+
+    " Mustache
+    call dein#add('mustache/vim-mustache-handlebars')
 
     " Golang
     call dein#add('fatih/vim-go')
