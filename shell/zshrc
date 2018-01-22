@@ -61,6 +61,10 @@ export EDITOR="$VISUAL"
 export MANPAGER="less -X"
 
 # Paths.
+export GOPATH="$HOME/Documents/Workspace"
+export GOROOT="$(brew --prefix)/opt/go/libexec"
+export PATH="$PATH:$GOPATH/bin"
+export PATH="$PATH:$GOROOT/bin"
 export PATH="$(brew --prefix)/sbin:$PATH"
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
@@ -75,6 +79,7 @@ alias py="python"
 alias ipy="ipython"
 alias rb="ruby"
 alias docker_prune_images="docker images | awk '/<none>/ { print $3 }' | xargs docker rmi"
+alias docker_prune_containers="docker ps -a | grep Exit | cut -d ' ' -f 1 | xargs docker rm"
 alias vim="nvim"
 alias ag='ag --color-match "0;31" --pager "less -FRSX"'
 alias grep="grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} --exclude='*.pyc'"
