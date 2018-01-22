@@ -8,10 +8,9 @@ if [[ $? != 0 ]]; then
     brew install zsh
     brew install bash
     brew install bash-completion
-    brew install neovim/neovim/neovim
+    brew install neovim
     brew install coreutils
     brew install git
-    brew install git-flow
     brew install git-lfs
     brew install grep
     brew install ack
@@ -21,11 +20,6 @@ if [[ $? != 0 ]]; then
     brew install pyenv
     brew install go
     brew install composer
-    brew install mysql
-    brew install mongodb
-    brew install memcached
-    brew install redis
-    brew install lastpass-cli
 
     brew tap caskroom/fonts
     brew cask install font-inconsolata-dz
