@@ -32,13 +32,17 @@ ZSH_THEME="pure"
 
 # zsh plugins.
 plugins=(
+    iterm2
     git
     python
+    pyenv
+    pip
     docker
+    docker-compose
     extract
     themes
-    aws
     vi-mode
+    jsontools
     zsh_reload
     colored-man-pages
     zsh-syntax-highlighting
@@ -86,7 +90,3 @@ alias grep="grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} --exclude='
 
 # Increase the max number of open file descriptors allowed.
 ulimit -n 4096
-
-# Initialize pyenv and pyenv-virtualenv.
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi

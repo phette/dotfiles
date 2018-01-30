@@ -22,7 +22,6 @@ unset DIR
 source $DOTFILES_DIR/exports
 source $DOTFILES_DIR/aliases
 source $DOTFILES_DIR/paths
-source $DOTFILES_DIR/functions/*
 
 # Only load Liquid Prompt in interactive shells (not from a script or scp).
 [[ $- = *i* ]] && source "$DOTFILES_DIR/liquidprompt/liquidprompt"
