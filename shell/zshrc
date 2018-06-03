@@ -46,6 +46,7 @@ plugins=(
     colored-man-pages
     zsh-syntax-highlighting
     zsh-autosuggestions
+    pipenv
 )
 
 # Show timestamps in zsh history.

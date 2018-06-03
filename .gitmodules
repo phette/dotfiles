@@ -1,3 +1,6 @@
 [submodule "shell/oh-my-zsh.custom/plugins/zsh-autosuggestions"]
 	path = shell/oh-my-zsh.custom/plugins/zsh-autosuggestions
 	url = git@github.com:zsh-users/zsh-autosuggestions.git
+[submodule "shell/oh-my-zsh.custom/plugins/pipenv"]
+	path = shell/oh-my-zsh.custom/plugins/pipenv
+	url = git@github.com:gangleri/pipenv.git
