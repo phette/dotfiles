@@ -64,7 +64,7 @@ export EDITOR="$VISUAL"
 export MANPAGER="less -X"
 
 # Paths.
-export GOPATH="$HOME/Documents/Workspace"
+export GOPATH="$HOME/go"
 export GOROOT="$(brew --prefix)/opt/go/libexec"
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:$GOROOT/bin"
