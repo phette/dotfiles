@@ -18,6 +18,7 @@ if [[ $? != 0 ]]; then
     brew install wget
     brew install node
     brew install pyenv
+    brew install pipenv
     brew install go
     brew install composer
 
