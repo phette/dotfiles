@@ -27,8 +27,9 @@ ZSH_CUSTOM=$DOTFILES_DIR/oh-my-zsh.custom
 DISABLE_AUTO_UPDATE=true
 DISABLE_UPDATE_PROMPT=true
 
-# oh-my-zsh theme.
-ZSH_THEME="refined"
+# Don't let oh-my-zsh set a theme because we want
+# to use the latest and greatest from the pure theme.
+ZSH_THEME=""
 
 # zsh plugins.
 plugins=(
@@ -39,7 +40,6 @@ plugins=(
     docker
     docker-compose
     extract
-    themes
     vi-mode
     jsontools
     zsh_reload
@@ -54,6 +54,10 @@ HIST_STAMPS="mm/dd/yyyy"
 
 # Start oh-my-zsh.
 source $ZSH/oh-my-zsh.sh
+
+# Launch pure prompt.
+autoload -U promptinit; promptinit
+prompt pure
 
 # Don't share history.
 unsetopt share_history
