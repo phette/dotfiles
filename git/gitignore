@@ -14,5 +14,11 @@ ehthumbs.db
 # PyEnv files
 *.python-version
 
+# PyTest files
+.pytest_cache/
+
+# VSCode files
+.vscode/
+
 # All log files
 *.log
