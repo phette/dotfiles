@@ -45,6 +45,7 @@ plugins=(
     zsh_reload
     colored-man-pages
     zsh-syntax-highlighting
+    zsh-autosuggestions
 )
 
 # Show timestamps in zsh history.
