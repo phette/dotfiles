@@ -1,6 +1,24 @@
+[submodule "shell/oh-my-zsh"]
+	path = shell/oh-my-zsh
+	url = git@github.com:robbyrussell/oh-my-zsh.git
+[submodule "shell/oh-my-zsh.custom/themes/pure"]
+	path = shell/oh-my-zsh.custom/themes/pure
+	url = git@github.com:sindresorhus/pure.git
+[submodule "shell/oh-my-zsh.custom/themes/powerlevel9k"]
+	path = shell/oh-my-zsh.custom/themes/powerlevel9k
+	url = git@github.com:bhilburn/powerlevel9k.git
+[submodule "shell/oh-my-zsh.custom/plugins/zsh-syntax-highlighting"]
+	path = shell/oh-my-zsh.custom/plugins/zsh-syntax-highlighting
+	url = git@github.com:zsh-users/zsh-syntax-highlighting.git
 [submodule "shell/oh-my-zsh.custom/plugins/zsh-autosuggestions"]
 	path = shell/oh-my-zsh.custom/plugins/zsh-autosuggestions
 	url = git@github.com:zsh-users/zsh-autosuggestions.git
 [submodule "shell/oh-my-zsh.custom/plugins/pipenv"]
 	path = shell/oh-my-zsh.custom/plugins/pipenv
 	url = git@github.com:gangleri/pipenv.git
+[submodule "shell/liquidprompt"]
+	path = shell/liquidprompt
+	url = git@github.com:nojhan/liquidprompt.git
+[submodule "vim/neobundle.vim"]
+	path = vim/neobundle.vim
+	url = git@github.com:Shougo/neobundle.vim.git
