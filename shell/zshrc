@@ -1,15 +1,49 @@
-# Show timestamps in zsh history.
-HIST_STAMPS="mm/dd/yyyy"
+# Determine the real path of this file so that it can be sourced from anywhere.
+SOURCE=${(%):-%N}
 
-# Enable aws cli tab completion.
-autoload -Uz compinit && compinit
-autoload -Uz bashcompinit
-bashcompinit -i
-complete -C aws_completer aws
+# Resolve $SOURCE until the file is no longer a symlink.
+while [ -h "$SOURCE" ]; do
+  DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+  SOURCE="$(readlink "$SOURCE")"
 
-# Launch pure prompt.
-autoload -U promptinit && promptinit
-prompt pure
+  # If $SOURCE was a relative symlink, we need to resolve it
+  # relative to the path where the symlink file was located.
+  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
+done
+
+# This is the real path to this file.
+DOTFILES_DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+
+unset SOURCE
+unset DIR
+
+# Load antigen.
+source $DOTFILES_DIR/antigen.zsh
+
+# Load oh-my-zsh.
+antigen use oh-my-zsh
+
+# Set theme.
+antigen theme sindresorhus/pure
+
+# Bundles from oh-my-zsh.
+antigen bundle git
+antigen bundle extract
+antigen bundle jsontools
+antigen bundle vi-mode
+antigen bundle docker
+antigen bundle docker-compose
+antigen bundle python
+antigen bundle pip
+antigen bundle go
+
+# Custom bundles.
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle gangleri/pipenv
+
+# Tell antigen that we're done.
+antigen apply
 
 # Don't share history.
 unsetopt share_history
@@ -51,3 +85,9 @@ ulimit -n 4096
 # Initialize pyenv and pyenv-virtualenv.
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+
+# Enable aws cli tab completion.
+autoload -Uz compinit && compinit
+autoload -Uz bashcompinit
+bashcompinit -i
+complete -C aws_completer aws
