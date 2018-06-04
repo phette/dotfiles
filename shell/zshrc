@@ -1,62 +1,14 @@
-# Determine the real path of this file so that it can be sourced from anywhere.
-SOURCE=${(%):-%N}
-
-# Resolve $SOURCE until the file is no longer a symlink.
-while [ -h "$SOURCE" ]; do
-  DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
-  SOURCE="$(readlink "$SOURCE")"
-
-  # If $SOURCE was a relative symlink, we need to resolve it
-  # relative to the path where the symlink file was located.
-  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
-done
-
-# This is the real path to this file.
-DOTFILES_DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
-
-unset SOURCE
-unset DIR
-
-# Path to oh-my-zsh.
-export ZSH=$DOTFILES_DIR/oh-my-zsh
-
-# oh-my-zsh custom directory (because oh-my-zsh is submoduled).
-ZSH_CUSTOM=$DOTFILES_DIR/oh-my-zsh.custom
-
-# Disable oh-my-zsh auto updates.
-DISABLE_AUTO_UPDATE=true
-DISABLE_UPDATE_PROMPT=true
-
-# Don't let oh-my-zsh set a theme because we want
-# to use the latest and greatest from the pure theme.
-ZSH_THEME=""
-
-# zsh plugins.
-plugins=(
-    iterm2
-    git
-    python
-    pip
-    docker
-    docker-compose
-    extract
-    vi-mode
-    jsontools
-    zsh_reload
-    colored-man-pages
-    zsh-syntax-highlighting
-    zsh-autosuggestions
-    pipenv
-)
-
 # Show timestamps in zsh history.
 HIST_STAMPS="mm/dd/yyyy"
 
-# Start oh-my-zsh.
-source $ZSH/oh-my-zsh.sh
+# Enable aws cli tab completion.
+autoload -Uz compinit && compinit
+autoload -Uz bashcompinit
+bashcompinit -i
+complete -C aws_completer aws
 
 # Launch pure prompt.
-autoload -U promptinit; promptinit
+autoload -U promptinit && promptinit
 prompt pure
 
 # Don't share history.
