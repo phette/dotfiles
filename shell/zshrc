@@ -32,6 +32,7 @@ antigen bundle docker
 antigen bundle docker-compose
 antigen bundle python
 antigen bundle pip
+antigen bundle pyenv
 antigen bundle go
 
 # Custom bundles.
@@ -70,7 +71,6 @@ export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export ANSIBLE_VAULT_PASSWORD_FILE="~/.ansible/vault-pass.txt"
 
 # Aliases.
-alias ls="ls --color -G"
 alias cls="clear; ls"
 alias py="python"
 alias ipy="ipython"
@@ -83,10 +83,6 @@ alias grep="grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} --exclude='
 
 # Increase the max number of open file descriptors allowed.
 ulimit -n 4096
-
-# Initialize pyenv and pyenv-virtualenv.
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
 # Enable aws cli tab completion.
 autoload -Uz compinit && compinit
