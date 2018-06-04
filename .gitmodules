@@ -1,15 +1,3 @@
-[submodule "shell/oh-my-zsh.custom/themes/pure"]
-	path = shell/oh-my-zsh.custom/themes/pure
-	url = git@github.com:sindresorhus/pure.git
-[submodule "shell/oh-my-zsh.custom/plugins/zsh-syntax-highlighting"]
-	path = shell/oh-my-zsh.custom/plugins/zsh-syntax-highlighting
-	url = git@github.com:zsh-users/zsh-syntax-highlighting.git
-[submodule "shell/oh-my-zsh.custom/plugins/zsh-autosuggestions"]
-	path = shell/oh-my-zsh.custom/plugins/zsh-autosuggestions
-	url = git@github.com:zsh-users/zsh-autosuggestions.git
-[submodule "shell/oh-my-zsh.custom/plugins/pipenv"]
-	path = shell/oh-my-zsh.custom/plugins/pipenv
-	url = git@github.com:gangleri/pipenv.git
 [submodule "shell/liquidprompt"]
 	path = shell/liquidprompt
 	url = git@github.com:nojhan/liquidprompt.git
