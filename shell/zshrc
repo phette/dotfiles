@@ -23,9 +23,6 @@ source $DOTFILES_DIR/antigen.zsh
 # Load oh-my-zsh.
 antigen use oh-my-zsh
 
-# Set theme.
-antigen theme sindresorhus/pure
-
 # Bundles from oh-my-zsh.
 antigen bundle git
 antigen bundle extract
@@ -40,7 +37,12 @@ antigen bundle go
 # Custom bundles.
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle mafredri/zsh-async
 antigen bundle gangleri/pipenv
+
+# Set theme.
+antigen theme sindresorhus/pure
+
 
 # Tell antigen that we're done.
 antigen apply
