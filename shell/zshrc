@@ -61,7 +61,6 @@ export MANPAGER="less -X"
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$(brew --prefix)/sbin:$PATH"
-export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # GPG
