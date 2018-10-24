@@ -3,7 +3,7 @@
 
 [core]
     editor = nvim
-    excludesfile = /Users/nathanphetteplace/.gitignore
+    excludesfile = ~/.gitignore
 
 [push]
     default = simple
