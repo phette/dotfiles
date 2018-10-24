@@ -1,6 +1,16 @@
 [include]
     path = ~/.gitconfig.local
 
+[user]
+	name = Nathan Phetteplace
+	signingkey = 88D5D785C8444F05
+
+[commit]
+	gpgsign = true
+
+[gpg]
+	program = /usr/local/bin/gpg2
+
 [core]
     editor = nvim
     excludesfile = ~/.gitignore
