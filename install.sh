@@ -6,24 +6,22 @@ if [[ $? != 0 ]]; then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
     brew install zsh
+    brew install zsh-completions
+    brew install fish
     brew install bash
     brew install bash-completion
     brew install neovim
-    brew install coreutils
     brew install git
-    brew install git-lfs
     brew install grep
     brew install ack
     brew install the_silver_searcher
     brew install wget
     brew install node
     brew install pyenv
+    brew install pyenv-virtualenv
     brew install pipenv
     brew install go
     brew install composer
-
-    brew tap caskroom/fonts
-    brew cask install font-inconsolata-dz
 else
     brew update
     brew upgrade
@@ -52,5 +50,5 @@ ln -sfv $DIR/.vim                       $HOME/.config/nvim
 ln -sfv $DIR/vim/vimrc                  $HOME/.config/nvim/init.vim
 ln -sfv $DIR/vim/neobundle.vim          $HOME/.vim/bundle/
 
-# Makei default shell is zsh.
+# Make default shell is zsh.
 chsh -s $(which zsh)
