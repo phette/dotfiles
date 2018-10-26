@@ -58,10 +58,9 @@ export EDITOR="$VISUAL"
 export MANPAGER="less -X"
 
 # Paths.
-export GOPATH="$HOME/go"
+export GOPATH="$HOME/workspace/go"
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$(brew --prefix)/sbin:$PATH"
-export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # GPG
 export GPG_TTY=$(tty)
