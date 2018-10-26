@@ -3,7 +3,6 @@
 
 [user]
 	name = Nathan Phetteplace
-	signingkey = 88D5D785C8444F05
 
 [commit]
 	gpgsign = true
