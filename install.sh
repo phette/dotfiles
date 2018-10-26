@@ -7,21 +7,17 @@ if [[ $? != 0 ]]; then
 
     brew install zsh
     brew install zsh-completions
-    brew install fish
     brew install bash
     brew install bash-completion
     brew install neovim
     brew install git
     brew install grep
-    brew install ack
     brew install the_silver_searcher
     brew install wget
-    brew install node
     brew install pyenv
     brew install pyenv-virtualenv
     brew install pipenv
     brew install go
-    brew install composer
 else
     brew update
     brew upgrade
@@ -33,7 +29,7 @@ pip3 install --upgrade neovim
 
 # Install dein (for vim/neovim).
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-sh installer.sh ~/.vim
+sh installer.sh ~/.cache/dein
 
 # Get the absolute path to this file.
 DIR="$(cd "$(dirname "$0")" && pwd)"
@@ -42,13 +38,11 @@ DIR="$(cd "$(dirname "$0")" && pwd)"
 ln -sfv $DIR/shell/zshrc                $HOME/.zshrc
 ln -sfv $DIR/shell/bash_profile         $HOME/.bash_profile
 ln -sfv $DIR/shell/inputrc              $HOME/.inputrc
-ln -sfv $DIR/shell/ackrc                $HOME/.ackrc
 ln -sfv $DIR/shell/liquidpromptrc       $HOME/.liquidpromptrc
 ln -sfv $DIR/git/gitconfig              $HOME/.gitconfig
 ln -sfv $DIR/git/gitignore              $HOME/.gitignore
-ln -sfv $DIR/.vim                       $HOME/.config/nvim
 ln -sfv $DIR/vim/vimrc                  $HOME/.config/nvim/init.vim
-ln -sfv $DIR/vim/neobundle.vim          $HOME/.vim/bundle/
 
 # Make default shell is zsh.
+# Make sure the zsh executable exists in /etc/shells.
 chsh -s $(which zsh)
