@@ -59,22 +59,28 @@ export MANPAGER="less -X"
 
 # Paths.
 export GOPATH="$HOME/workspace/go"
-export PATH="$PATH:$GOPATH/bin"
+export PATH="$GOPATH/bin:$PATH"
 export PATH="$(brew --prefix)/sbin:$PATH"
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+export PATH="$(brew --prefix findutils)/libexec/gnubin:$PATH"
+export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
+export MANPATH="$(brew --prefix findutils)/libexec/gnuman:$MANPATH"
 
 # GPG
 export GPG_TTY=$(tty)
 
 # Aliases.
+alias ls="ls -lF --color"
+alias la="ls -lAF --color"
 alias cls="clear; ls"
+alias ag='ag --color-match "0;31" --pager "less -FRSX"'
+alias grep="grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} --exclude='*.pyc'"
 alias py="python"
 alias ipy="ipython"
 alias rb="ruby"
+alias vim="nvim"
 alias docker_prune_images="docker images | awk '/<none>/ { print $3 }' | xargs docker rmi"
 alias docker_prune_containers="docker ps -a | grep Exit | cut -d ' ' -f 1 | xargs docker rm"
-alias vim="nvim"
-alias ag='ag --color-match "0;31" --pager "less -FRSX"'
-alias grep="grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} --exclude='*.pyc'"
 
 # Increase the max number of open file descriptors allowed.
 ulimit -n 4096
