@@ -1,3 +1,7 @@
+[core]
+    editor = nvim
+    excludesfile = ~/.gitignore
+
 [include]
     path = ~/.gitconfig.local
 
@@ -6,13 +10,6 @@
 
 [commit]
 	gpgsign = true
-
-[gpg]
-	program = /usr/local/bin/gpg2
-
-[core]
-    editor = nvim
-    excludesfile = ~/.gitignore
 
 [push]
     default = simple
@@ -29,23 +26,6 @@
 
 [apply]
     whitespace = nowarn
-
-[alias]
-    st = status -s
-    ls = log --abbrev-commit --pretty=format:'%C(yellow)%h%C(red)%d %C(reset)%s%C(dim white) [%cn]' --decorate
-    lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(yellow)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)[%an]%C(reset)%C(red)%d%C(reset)' --all
-    lg2 = log --graph --abbrev-commit --decorate --date=short --format=format:'%C(yellow)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(red)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)[%an]%C(reset)' --all
-    co = checkout
-    cob = checkout -b
-    br = branch
-    cp = cherry-pick
-    cl = clone
-    ci = commit
-    fpush = push --force
-    diffc = diff --cached
-    diffst = diff --stat
-    fp = fetch --prune
-    edit = !mvim -O $(git status --short | awk '$1 ~ /^M|A|U/ {print $2}')
 
 [url "git@github.com:"]
 	insteadOf = https://github.com/
