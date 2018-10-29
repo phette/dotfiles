@@ -1,0 +1,69 @@
+{
+    // Editor
+    "editor.fontFamily": "Fira Code",
+    "editor.fontSize": 12,
+    "editor.fontWeight": "600",
+    "editor.fontLigatures": true,
+    "editor.renderIndentGuides": true,
+
+    // Workbench
+    "workbench.statusBar.feedback.visible": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.colorTheme": "One Dark Pro",
+    "workbench.iconTheme": "vscode-icons",
+
+    // Window
+    "window.zoomLevel": -1,
+
+    // File Explorer
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+
+    // Terminal
+    "terminal.external.osxExec": "iTerm.app",
+    "terminal.integrated.fontFamily": "Fira Code",
+    "terminal.integrated.fontSize": 12,
+    "terminal.integrated.shell.osx": "zsh",
+
+    // Search
+    "search.smartCase": true,
+
+    // Extensions
+    "extensions.ignoreRecommendations": true,
+
+    // Python
+    "python.pythonPath": "~/.pyenv/versions/3.7.0",
+    "python.venvPath": "~/.pyenv",
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Args": [
+        "--max-line-length=120"
+    ],
+
+    // Go
+    "go.formatTool": "gofmt",
+    "go.lintTool": "gometalinter",
+    "go.lintFlags": [
+        "--config=~/.gometalinter"
+    ],
+    "go.enableCodeLens": {
+        "references": false,
+        "runtest": false
+    },
+
+    // vim
+    "vim.hlsearch": true,
+    "vim.useSystemClipboard": true,
+
+    // Git
+    "git.autofetch": true,
+
+    // GitHub
+    "github.hosts": [
+        {
+            "host": "https://github.com",
+            "username": "oauth",
+            "token": "system"
+        }
+    ],
+}
