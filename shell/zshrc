@@ -70,8 +70,8 @@ export MANPATH="$(brew --prefix findutils)/libexec/gnuman:$MANPATH"
 export GPG_TTY=$(tty)
 
 # Aliases.
-alias ls="ls -lF --color"
-alias la="ls -lAF --color"
+alias ls="ls -lF --color --group-directories-first"
+alias la="ls -lAF --color --group-directories-first"
 alias cls="clear; ls"
 alias ag='ag --color-match "0;31" --pager "less -FRSX"'
 alias grep="grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} --exclude='*.pyc'"
