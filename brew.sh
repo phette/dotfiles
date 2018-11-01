@@ -38,11 +38,18 @@ brew install pyenv
 brew install pyenv-virtualenv
 brew install pipenv
 
-# Install neovim
+# Install golang and tools.
+brew install go
+brew install dep
+
+# Install neovim.
 brew install neovim
 
-# Install GnuPG to enable PGP-signing commits
+# Install GnuPG to enable PGP-signing commits.
 brew install gnupg
+
+# Install htop.
+brew install htop
 
 # Install fonts.
 brew tap caskroom/fonts
