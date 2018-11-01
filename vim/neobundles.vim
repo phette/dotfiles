@@ -37,20 +37,9 @@ if dein#load_state(expand('~/.vim/bundles/'))
     " Open terminal buffer in split terminal
     "call dein#add('vimlab/split-term.vim')
 
-    " Ansible
-    call dein#add('pearofducks/ansible-vim')
-
     " Python
     call dein#add('nvie/vim-flake8')
     call dein#add('vim-scripts/indentpython.vim')
-
-    " Javascript
-    call dein#add('pangloss/vim-javascript')
-    call dein#add('ternjs/tern_for_vim', {'do': 'npm install'})
-    call dein#add('carlitux/deoplete-ternjs', {'do': 'npm install -g tern'})
-
-    " Node.js
-    call dein#add('moll/vim-node')
 
     " Mustache
     call dein#add('mustache/vim-mustache-handlebars')
