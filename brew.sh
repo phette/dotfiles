@@ -20,6 +20,7 @@ brew install gnu-sed --with-default-names
 brew install grep
 
 # Install something better than grep.
+brew install ripgrep
 brew install the_silver_searcher
 
 # Install wget.
