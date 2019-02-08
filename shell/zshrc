@@ -30,19 +30,19 @@ antigen bundle jsontools
 antigen bundle vi-mode
 antigen bundle docker
 antigen bundle docker-compose
+antigen bundle golang
 antigen bundle python
 antigen bundle pip
 antigen bundle pyenv
-antigen bundle go
 
 # Custom bundles.
+antigen bundle gangleri/pipenv
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle mafredri/zsh-async
-antigen bundle sindresorhus/pure
-antigen bundle gangleri/pipenv
 
 # Set theme.
+antigen bundle sindresorhus/pure
 antigen theme sindresorhus/pure
 
 # Tell antigen that we're done.
@@ -66,6 +66,9 @@ export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 export PATH="$(brew --prefix findutils)/libexec/gnubin:$PATH"
 export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
 export MANPATH="$(brew --prefix findutils)/libexec/gnuman:$MANPATH"
+
+# Tell pipenv to install virtual environments in the root of the project.
+export PIPENV_VENV_IN_PROJECT=true
 
 # GPG
 export GPG_TTY=$(tty)
