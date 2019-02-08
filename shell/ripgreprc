@@ -1,0 +1,13 @@
+# Set colors.
+--colors=path:fg:green
+--colors=path:style:bold
+
+--colors=line:fg:yellow
+--colors=line:style:bold
+
+--colors=match:fg:red
+--colors=match:style:bold
+
+# Search case insensitively if the pattern is
+# all lowercase. Otherwise, search case sensitively.
+--smart-case
