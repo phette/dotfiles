@@ -23,6 +23,8 @@ if dein#load_state(expand('~/.vim/bundles/'))
 
     " Colors
     call dein#add('flazz/vim-colorschemes')
+    " call dein#add('phanviet/vim-monokai-pro')
+    call dein#add('Erichain/vim-monokai-pro')
 
     " Alignment
     call dein#add('godlygeek/tabular')
@@ -40,6 +42,7 @@ if dein#load_state(expand('~/.vim/bundles/'))
     " Python
     call dein#add('nvie/vim-flake8')
     call dein#add('vim-scripts/indentpython.vim')
+    call dein#add('ambv/black')
 
     " Mustache
     call dein#add('mustache/vim-mustache-handlebars')

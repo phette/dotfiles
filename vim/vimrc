@@ -26,9 +26,13 @@ endtry
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 try
-    colorscheme desertEx
+    colorscheme monokai_pro
 catch
-    colorscheme desert
+    try
+        colorscheme desertEx
+    catch
+        colorscheme desert
+    endtry
 endtry
 
 " Enable syntax highlighting
