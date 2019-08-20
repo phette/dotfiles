@@ -54,6 +54,7 @@
     // Go
     "go.formatTool": "goimports",
     "go.lintTool":"golangci-lint",
+    "go.lintFlags": ["--fast"],
     "go.autocompleteUnimportedPackages": true,
     "go.useLanguageServer": true,
     "gopls": {
