@@ -4,13 +4,17 @@
     "editor.fontSize": 12,
     "editor.fontWeight": "600",
     "editor.fontLigatures": true,
-    "editor.renderIndentGuides": true,
+    "editor.renderWhitespace":"boundary",
+
+    // Telemetry
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
 
     // Workbench
-    "workbench.statusBar.feedback.visible": false,
     "workbench.startupEditor": "newUntitledFile",
-    "workbench.colorTheme": "One Dark Pro",
-    "workbench.iconTheme": "vscode-icons",
+    "workbench.colorTheme": "Monokai Pro (Filter Machine)",
+    "workbench.iconTheme": "Monokai Pro (Filter Machine) Icons",
+    "workbench.editor.highlightModifiedTabs": true,
 
     // Window
     "window.zoomLevel": -1,
@@ -18,6 +22,9 @@
     // File Explorer
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
+
+    // Breadcrumbs
+    "breadcrumbs.enabled": true,
 
     // Terminal
     "terminal.external.osxExec": "iTerm.app",
@@ -27,43 +34,45 @@
 
     // Search
     "search.smartCase": true,
+    "search.showLineNumbers": true,
+    "search.useGlobalIgnoreFiles": true,
 
     // Extensions
     "extensions.ignoreRecommendations": true,
 
     // Python
-    "python.pythonPath": "~/.pyenv/versions/3.7.0",
+    "python.pythonPath": "~/.pyenv/versions/3.7.3",
     "python.venvPath": "~/.pyenv",
+    // "[python]": {"editor.formatOnSave": true},
+    "python.formatting.provider": "black",
+    "python.formatting.blackPath": "~/.pyenv/shims/black",
     "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": true,
-    "python.linting.flake8Args": [
-        "--max-line-length=120"
-    ],
+    "python.linting.flake8Path": "~/.pyenv/shims/flake8",
+    "python.linting.flake8Args": ["--max-line-length=88"],
 
     // Go
-    "go.formatTool": "gofmt",
-    "go.lintTool": "gometalinter",
-    "go.lintFlags": [
-        "--config=~/.gometalinter"
-    ],
+    "go.formatTool": "goimports",
+    "go.lintTool":"golangci-lint",
+    "go.autocompleteUnimportedPackages": true,
+    "go.useLanguageServer": true,
+    "gopls": {
+        "usePlaceholders": true,
+    },
     "go.enableCodeLens": {
         "references": false,
         "runtest": false
     },
 
+    // cfn-lint
+    "cfnLint.ignoreRules": ["E3012"],
+
     // vim
     "vim.hlsearch": true,
+    "vim.incsearch": true,
+    "vim.smartcase": true,
     "vim.useSystemClipboard": true,
 
     // Git
-    "git.autofetch": true,
-
-    // GitHub
-    "github.hosts": [
-        {
-            "host": "https://github.com",
-            "username": "oauth",
-            "token": "system"
-        }
-    ],
+    "git.autofetch": true
 }
