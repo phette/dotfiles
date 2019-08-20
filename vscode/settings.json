@@ -75,5 +75,24 @@
     "vim.useSystemClipboard": true,
 
     // Git
-    "git.autofetch": true
+    "git.autofetch": true,
+
+    // TODO tree
+    "todo-tree.defaultHighlight": {
+        "opacity": 60,
+    },
+    "todo-tree.customHighlight": {
+        "TODO": {
+            "type": "tag",
+            "foreground": "white",
+            "background": "#ff8400",
+        },
+        "FIXME": {
+            "type": "tag",
+            "foreground": "white",
+            "background": "red",
+            "icon": "alert",
+            "iconColour": "red"
+        }
+    }
 }
