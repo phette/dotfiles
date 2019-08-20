@@ -33,13 +33,14 @@ catch
     catch
         colorscheme desert
     endtry
+
+    " Override desert[Ex]'s cursor line (lighter color and no underline)
+    hi CursorLine term=none cterm=none ctermbg=239 guibg=Grey30
 endtry
 
 " Enable syntax highlighting
 syntax on
 
-" Override desert[Ex]'s cursor line (lighter color and no underline)
-hi CursorLine term=none cterm=none ctermbg=239 guibg=Grey30
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General
@@ -233,6 +234,10 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " Neovim Python coniguration
 let g:python_host_prog = $HOME.'/.pyenv/versions/neovim2/bin/python'
 let g:python3_host_prog = $HOME.'/.pyenv/versions/neovim3/bin/python'
+
+" Go configuration
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
 
 " Enable deoplete on startup
 call deoplete#enable()
