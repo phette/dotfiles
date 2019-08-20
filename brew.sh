@@ -13,18 +13,26 @@ brew install coreutils
 # Install GNU find, locate, updatedb, and xargs (g-prefixed).
 brew install findutils
 
-# Install GNU sed (overwrites build-in sed).
+# Install GNU sed (overwrites built-in sed).
 brew install gnu-sed --with-default-names
 
 # Install more recent version of grep.
 brew install grep
 
 # Install something better than grep.
-brew install ripgrep
 brew install the_silver_searcher
 
 # Install wget.
 brew install wget
+
+# Better alternative to cat with syntax highlighting and git integration.
+brew install bat
+
+# More welcoming ping.
+brew install prettyping
+
+# JSON parsing tool.
+brew install jq
 
 # Install bash 4 (the version packaged with macOS is outdated).
 brew install bash
