@@ -24,8 +24,8 @@ else
 fi
 
 # Install Python support for Neovim.
-pip install --upgrade neovim
-pip3 install --upgrade neovim
+pip install --upgrade pynvim
+pip3 install --upgrade pynvim
 
 # Install dein (for vim/neovim).
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
