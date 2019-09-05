@@ -1,7 +1,7 @@
-set runtimepath+=~/.vim/bundles/repos/github.com/Shougo/dein.vim
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
-if dein#load_state(expand('~/.vim/bundles/'))
-    call dein#begin(expand('~/.vim/bundles/'))
+if dein#load_state(expand('~/.cache/dein/'))
+    call dein#begin(expand('~/.cache/dein/'))
 
     " Let dein manage dein
     call dein#add('Shougo/dein.vim')
