@@ -61,7 +61,7 @@ brew install gnupg
 brew install htop
 
 # Install fonts.
-brew tap caskroom/fonts
+brew tap homebrew/cask-fonts
 brew cask install font-fira-code
 
 # Remove outdated formulae.
