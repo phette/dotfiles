@@ -17,7 +17,7 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 try
-    set guifont=Inconsolata-dz:h10
+    set guifont=Fira Code:h10
 catch
 endtry
 
@@ -235,12 +235,12 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let g:python_host_prog = $HOME.'/.pyenv/versions/neovim2/bin/python'
 let g:python3_host_prog = $HOME.'/.pyenv/versions/neovim3/bin/python'
 
-" Go configuration
-let g:go_def_mode='gopls'
-let g:go_info_mode='gopls'
-
 " Enable deoplete on startup
-call deoplete#enable()
+let g:deoplete#enable_at_startup = 1
+
+" Go configuration
+let g:go_def_mode = 'gopls'
+let g:go_info_mode = 'gopls'
 
 " Lightline configuration
 let g:lightline = {

@@ -4,16 +4,16 @@ if dein#load_state(expand('~/.cache/dein/'))
     call dein#begin(expand('~/.cache/dein/'))
 
     " Let dein manage dein
-    call dein#add('Shougo/dein.vim')
+    call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
     call dein#add('Shougo/denite.nvim')
-
-    " Source control
-    call dein#add('tpope/vim-fugitive')
-    call dein#add('airblade/vim-gitgutter')
 
     " Auto-completion
     call dein#add('Shougo/deoplete.nvim')
     call dein#add('zchee/deoplete-jedi')
+
+    " Source control
+    call dein#add('tpope/vim-fugitive')
+    call dein#add('airblade/vim-gitgutter')
 
     " File browsing
     call dein#add('scrooloose/nerdtree')
