@@ -11,12 +11,14 @@
 [commit]
 	gpgsign = true
 
+[fetch]
+    prune = true
+
 [push]
     default = simple
 
-[branch]
-    autosetupmerge = always
-    autosetuprebase = always
+[pull]
+	rebase = true
 
 [advice]
     statusHints = false
