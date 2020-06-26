@@ -28,12 +28,14 @@ antigen bundle git
 antigen bundle extract
 antigen bundle jsontools
 antigen bundle vi-mode
+antigen bundle httpie
 antigen bundle docker
 antigen bundle docker-compose
 antigen bundle golang
 antigen bundle python
 antigen bundle pip
 antigen bundle pyenv
+antigen bundle aws
 
 # Custom bundles.
 antigen bundle gangleri/pipenv
