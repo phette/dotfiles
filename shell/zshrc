@@ -1,84 +1,80 @@
-# Determine the real path of this file so that it can be sourced from anywhere.
-SOURCE=${(%):-%N}
+# Load antigen
+source $HOME/workspace/dotfiles/shell/antigen.zsh
 
-# Resolve $SOURCE until the file is no longer a symlink.
-while [ -h "$SOURCE" ]; do
-  DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
-  SOURCE="$(readlink "$SOURCE")"
+# TODO: Could move all of this to ~/.antigenrc and init there
 
-  # If $SOURCE was a relative symlink, we need to resolve it
-  # relative to the path where the symlink file was located.
-  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
-done
-
-# This is the real path to this file.
-DOTFILES_DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
-
-unset SOURCE
-unset DIR
-
-# Load antigen.
-source $DOTFILES_DIR/antigen.zsh
-
-# Load oh-my-zsh.
+# Load oh-my-zsh
 antigen use oh-my-zsh
 
-# Bundles from oh-my-zsh.
+# Set theme
+antigen theme sindresorhus/pure@main
+
+# ZSH niceties
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle mafredri/zsh-async
+
+# Golang plugins
+antigen bundle golang
+
+# Python plugins
+antigen bundle python
+antigen bundle pip
+antigen bundle pipenv
+antigen bundle pyenv
+
+# Docker plugins
+antigen bundle docker
+antigen bundle docker-compose
+
+# AWS plugins
+antigen bundle aws
+
+# Other plugins
 antigen bundle git
 antigen bundle extract
 antigen bundle jsontools
 antigen bundle vi-mode
 antigen bundle httpie
-antigen bundle docker
-antigen bundle docker-compose
-antigen bundle golang
-antigen bundle python
-antigen bundle pip
-antigen bundle pipenv
-antigen bundle pyenv
-antigen bundle aws
 
-# Custom bundles.
-antigen bundle gangleri/pipenv
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle mafredri/zsh-async
-
-# Set theme.
-antigen bundle sindresorhus/pure
-antigen theme sindresorhus/pure
-
-# Tell antigen that we're done.
+# Tell antigen that we're done
 antigen apply
 
-# Make neovim the default editor.
+# Make neovim the default editor
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 
-# Don't clear the screen after quitting a man page.
+# Don't clear the screen after quitting a man page
 export MANPAGER="less -X"
 
-# Paths.
+# GOPATH
 export GOPATH="$HOME/workspace/go"
 export PATH="$GOPATH/bin:$PATH"
-export PATH="$(brew --prefix)/sbin:$PATH"
+
+# Custom installed coreutils and findutils accessible on our path
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 export PATH="$(brew --prefix findutils)/libexec/gnubin:$PATH"
 export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
 export MANPATH="$(brew --prefix findutils)/libexec/gnuman:$MANPATH"
 
+# What does this do again?
 export GOPRIVATE="github.com/rewardStyle/*"
 
-# Tell pipenv to install virtual environments in the root of the project.
-export PIPENV_VENV_IN_PROJECT=true
-
-# Ensure AWS SDKs will load credentials from the AWS profile.
+# Ensure AWS SDKs load from your AWS config if it exists
 export AWS_SDK_LOAD_CONFIG=true
+
+# Enable aws cli tab completion
+autoload -Uz compinit && compinit
+complete -C "$(which aws_completer)" aws
+
+# Tell pipenv to install virtual environments in the root of the project
+export PIPENV_VENV_IN_PROJECT=true
 
 # GPG
 export GPG_TTY=$(tty)
 
-# Aliases.
+# Aliases
 alias ls="ls -lF --color --group-directories-first"
 alias la="ls -lAF --color --group-directories-first"
 alias cls="clear; ls"
@@ -92,5 +88,5 @@ alias dcv='docker-compose -f ./docker-compose-volumes.yml'
 alias dci='docker-compose -f ./docker-compose-infrastructure.yml'
 alias dca='docker-compose -f ./docker-compose-applications.yml'
 
-# Increase the max number of open file descriptors allowed.
+# Increase the max number of open file descriptors allowed
 ulimit -n 4096
