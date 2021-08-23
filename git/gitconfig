@@ -6,7 +6,7 @@
     path = ~/.gitconfig.local
 
 [user]
-	name = Nathan Phetteplace
+    name = Nathan Phetteplace
 
 [init]
     templatedir = ~/.git-templates
@@ -21,7 +21,7 @@
     default = simple
 
 [pull]
-	rebase = true
+    rebase = true
 
 [advice]
     statusHints = false
