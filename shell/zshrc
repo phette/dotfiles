@@ -22,7 +22,6 @@ antigen bundle golang
 antigen bundle python
 antigen bundle pip
 antigen bundle pipenv
-antigen bundle pyenv
 
 # Docker plugins
 antigen bundle docker
@@ -33,10 +32,9 @@ antigen bundle aws
 
 # Other plugins
 antigen bundle git
+antigen bundle vi-mode
 antigen bundle extract
 antigen bundle jsontools
-antigen bundle vi-mode
-antigen bundle httpie
 
 # Tell antigen that we're done
 antigen apply
@@ -61,12 +59,17 @@ export MANPATH="$(brew --prefix findutils)/libexec/gnuman:$MANPATH"
 # What does this do again?
 export GOPRIVATE="github.com/rewardStyle/*"
 
-# Ensure AWS SDKs load from your AWS config if it exists
+# Ensure aws sdks load from your aws config if it exists
 export AWS_SDK_LOAD_CONFIG=true
 
 # Enable aws cli tab completion
 autoload -Uz compinit && compinit
 complete -C "$(which aws_completer)" aws
+
+# Pyenv
+eval "$(pyenv init --path)" # <-- allegedly belongs in ~/.zprofile instead
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 # Tell pipenv to install virtual environments in the root of the project
 export PIPENV_VENV_IN_PROJECT=true
