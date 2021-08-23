@@ -34,6 +34,7 @@ antigen bundle docker-compose
 antigen bundle golang
 antigen bundle python
 antigen bundle pip
+antigen bundle pipenv
 antigen bundle pyenv
 antigen bundle aws
 
@@ -49,9 +50,6 @@ antigen theme sindresorhus/pure
 
 # Tell antigen that we're done.
 antigen apply
-
-# Don't share history.
-unsetopt share_history
 
 # Make neovim the default editor.
 export VISUAL=nvim
@@ -69,8 +67,13 @@ export PATH="$(brew --prefix findutils)/libexec/gnubin:$PATH"
 export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
 export MANPATH="$(brew --prefix findutils)/libexec/gnuman:$MANPATH"
 
+export GOPRIVATE="github.com/rewardStyle/*"
+
 # Tell pipenv to install virtual environments in the root of the project.
 export PIPENV_VENV_IN_PROJECT=true
+
+# Ensure AWS SDKs will load credentials from the AWS profile.
+export AWS_SDK_LOAD_CONFIG=true
 
 # GPG
 export GPG_TTY=$(tty)
@@ -80,18 +83,14 @@ alias ls="ls -lF --color --group-directories-first"
 alias la="ls -lAF --color --group-directories-first"
 alias cls="clear; ls"
 alias ag='ag --color-match "0;31" --pager "less -FRSX"'
-alias grep="grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} --exclude='*.pyc'"
 alias ping="prettyping --nolegend"
 alias py="python"
 alias ipy="ipython"
 alias rb="ruby"
 alias vim="nvim"
+alias dcv='docker-compose -f ./docker-compose-volumes.yml'
+alias dci='docker-compose -f ./docker-compose-infrastructure.yml'
+alias dca='docker-compose -f ./docker-compose-applications.yml'
 
 # Increase the max number of open file descriptors allowed.
 ulimit -n 4096
-
-# Enable aws cli tab completion.
-autoload -Uz compinit && compinit
-autoload -Uz bashcompinit
-bashcompinit -i
-complete -C aws_completer aws

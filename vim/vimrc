@@ -39,7 +39,7 @@ catch
 endtry
 
 " Enable syntax highlighting
-syntax on
+syntax enable
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -250,14 +250,6 @@ let g:lightline = {
 " CtrlP configuration
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-
-" vim-javascript settings
-let g:javascript_plugin_jsdoc = 1
-let g:javascript_plugin_ngdoc = 1
-let g:javascript_plugin_flow = 1
-
-" vim-mustache-handlebars settings
-let g:mustache_abbreviations = 1
 
 " tern settings
 let g:tern#command = ["tern"]

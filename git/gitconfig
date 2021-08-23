@@ -8,6 +8,9 @@
 [user]
 	name = Nathan Phetteplace
 
+[init]
+    templatedir = ~/.git-templates
+
 [commit]
 	gpgsign = true
 
