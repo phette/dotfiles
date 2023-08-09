@@ -27,10 +27,6 @@ fi
 pip install --upgrade pynvim
 pip3 install --upgrade pynvim
 
-# Install dein (for vim/neovim).
-curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-sh installer.sh ~/.cache/dein
-
 # Get the absolute path to this file.
 DIR="$(cd "$(dirname "$0")" && pwd)"
 
@@ -41,7 +37,8 @@ ln -sfv $DIR/shell/inputrc              $HOME/.inputrc
 ln -sfv $DIR/shell/liquidpromptrc       $HOME/.liquidpromptrc
 ln -sfv $DIR/git/gitconfig              $HOME/.gitconfig
 ln -sfv $DIR/git/gitignore              $HOME/.gitignore
-ln -sfv $DIR/vim/vimrc                  $HOME/.config/nvim/init.vim
+ln -sfv $DIR/vim/vimrc                  $HOME/.vimrc
+ln -sfv $DIR/vim/init.vim               $HOME/.config/nvim/init.vim
 
 # Make default shell is zsh.
 # Make sure the zsh executable exists in /etc/shells.
