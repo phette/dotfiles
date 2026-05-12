@@ -1,43 +1,22 @@
-# Load antigen
-source $HOME/workspace/dotfiles/shell/antigen.zsh
+# oh-my-zsh
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="" # using pure prompt instead
+plugins=(git golang python pip docker docker-compose extract jsontools)
+source $ZSH/oh-my-zsh.sh
 
-# TODO: Could move all of this to ~/.antigenrc and init there
+# pure prompt (brew install pure; includes async)
+fpath+=("$(brew --prefix)/share/zsh/site-functions")
+autoload -Uz promptinit && promptinit && prompt pure
 
-# Load oh-my-zsh
-antigen use oh-my-zsh
+# External plugins (brew-installed). Load syntax-highlighting last.
+[[ -r $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh ]] &&
+  source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
-# Set theme
-antigen theme sindresorhus/pure@main
+[[ -r $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]] &&
+  source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# ZSH niceties
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-completions
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle mafredri/zsh-async
-
-# Golang plugins
-antigen bundle golang
-
-# Python plugins
-antigen bundle python
-antigen bundle pip
-antigen bundle pipenv
-
-# Docker plugins
-antigen bundle docker
-antigen bundle docker-compose
-
-# AWS plugins
-antigen bundle aws
-
-# Other plugins
-antigen bundle git
-antigen bundle vi-mode
-antigen bundle extract
-antigen bundle jsontools
-
-# Tell antigen that we're done
-antigen apply
+[[ -r $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] &&
+  source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Make neovim the default editor
 export VISUAL=nvim
@@ -62,6 +41,9 @@ export GOPRIVATE="github.com/rewardStyle/*"
 # Ensure aws sdks load from your aws config if it exists
 export AWS_SDK_LOAD_CONFIG=true
 
+# Default to dev account aws profile for cli commands
+export AWS_PROFILE=dev
+
 # Enable aws cli tab completion
 autoload -Uz compinit && compinit
 complete -C "$(which aws_completer)" aws
@@ -73,6 +55,11 @@ eval "$(pyenv virtualenv-init -)"
 
 # Tell pipenv to install virtual environments in the root of the project
 export PIPENV_VENV_IN_PROJECT=true
+
+# pipenv completion (pipenv >= 2026.5.0; install argcomplete: pip3 install -U argcomplete)
+if command -v register-python-argcomplete &>/dev/null; then
+  eval "$(register-python-argcomplete pipenv)"
+fi
 
 # GPG
 export GPG_TTY=$(tty)
@@ -93,3 +80,23 @@ alias dca='docker-compose -f ./docker-compose-applications.yml'
 
 # Increase the max number of open file descriptors allowed
 ulimit -n 4096
+export PATH="$HOME/.local/bin:$PATH"
+
+# ktl self init
+# Show ktl profile in prompt (only when a profile is configured)
+setopt PROMPT_SUBST 2>/dev/null || true
+__ktl_prompt() {
+  local p; p=$(ktl config profile 2>/dev/null)
+  [[ -n "$p" && "$p" != "none" ]] && printf '(ktl:%s) ' "$p"
+}
+export PS1='$(__ktl_prompt)'"$PS1"
+
+# ktl completion init
+# Load cached ktl completions
+if [[ -d "$HOME/.zsh/completions" ]]; then
+  if (( ${fpath[(Ie)$HOME/.zsh/completions]} == 0 )); then
+    fpath=("$HOME/.zsh/completions" $fpath)
+  fi
+fi
+autoload -Uz compinit
+compinit -i

@@ -6,6 +6,9 @@ brew upgrade
 
 BREW_PREFIX=$(brew --prefix)
 
+# Install Pure prompt.
+brew install pure
+
 # Install GNU core utilities (those that come with macOS are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 brew install coreutils
@@ -41,15 +44,18 @@ brew install bash-completion2
 # Install zsh.
 brew install zsh
 brew install zsh-completions
+brew install zsh-syntax-highlighting
+brew install zsh-autosuggestions
+brew install zsh-vi-mode
 
 # Install Python tools.
 brew install pyenv
 brew install pyenv-virtualenv
 brew install pipenv
 
-# Install golang and tools.
+# Install golang and tools. Don't forget to set up ~/.docker/config.json.
 brew install go
-brew install dep
+brew install docker-credential-helper-ecr
 
 # Install neovim.
 brew install neovim
