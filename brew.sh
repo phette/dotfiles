@@ -4,26 +4,16 @@
 brew update
 brew upgrade
 
-BREW_PREFIX=$(brew --prefix)
-
 # Install Pure prompt.
 brew install pure
 
-# Install GNU core utilities (those that come with macOS are outdated).
-# Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
-brew install coreutils
+# Install fonts.
+brew install --cask font-fira-code-nerd-font
 
-# Install GNU find, locate, updatedb, and xargs (g-prefixed).
-brew install findutils
-
-# Install GNU sed (overwrites built-in sed).
-brew install gnu-sed --with-default-names
-
-# Install more recent version of grep.
-brew install grep
-
-# Install something better than grep.
-brew install the_silver_searcher
+# Neovim runtime dependencies (includes better grep).
+brew install ripgrep
+brew install fd
+brew install lazygit
 
 # Install wget.
 brew install wget
@@ -65,10 +55,6 @@ brew install gnupg
 
 # Install htop.
 brew install htop
-
-# Install fonts.
-brew tap homebrew/cask-fonts
-brew install --cask font-fira-code
 
 # Remove outdated formulae.
 brew cleanup

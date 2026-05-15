@@ -33,13 +33,22 @@ pip3 install --upgrade argcomplete
 
 # Symlink necessary files and directories.
 ln -sfv $DIR/shell/zshrc                $HOME/.zshrc
-ln -sfv $DIR/shell/bash_profile         $HOME/.bash_profile
-ln -sfv $DIR/shell/inputrc              $HOME/.inputrc
-ln -sfv $DIR/shell/liquidpromptrc       $HOME/.liquidpromptrc
+ln -sfv $DIR/shell/ripgreprc            $HOME/.ripgreprc
 ln -sfv $DIR/git/gitconfig              $HOME/.gitconfig
 ln -sfv $DIR/git/gitignore              $HOME/.gitignore
-ln -sfv $DIR/vim/vimrc                  $HOME/.vimrc
-ln -sfv $DIR/vim/init.vim               $HOME/.config/nvim/init.vim
+
+# Symlink kickstart-based Neovim config from dotfiles.
+mkdir -p "$HOME/.config"
+ln -sfn "$DIR/nvim" "$HOME/.config/nvim"
+
+# Verify Neovim is installed before bootstrapping kickstart plugins.
+if ! command -v nvim &>/dev/null; then
+    echo "Error: nvim not found. Ensure brew.sh ran successfully." >&2
+    exit 1
+fi
+
+# Headless plugin install so the first interactive launch is fast.
+nvim --headless "+Lazy! sync" +qa
 
 # Make default shell is zsh.
 # Make sure the zsh executable exists in /etc/shells.

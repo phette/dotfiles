@@ -29,20 +29,17 @@ export MANPAGER="less -X"
 export GOPATH="$HOME/workspace/go"
 export PATH="$GOPATH/bin:$PATH"
 
-# Custom installed coreutils and findutils accessible on our path
-export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
-export PATH="$(brew --prefix findutils)/libexec/gnubin:$PATH"
-export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
-export MANPATH="$(brew --prefix findutils)/libexec/gnuman:$MANPATH"
-
 # What does this do again?
 export GOPRIVATE="github.com/rewardStyle/*"
+
+# Ripgrep config
+export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
 # Ensure aws sdks load from your aws config if it exists
 export AWS_SDK_LOAD_CONFIG=true
 
 # Default to dev account aws profile for cli commands
-export AWS_PROFILE=dev
+export AWS_PROFILE=rewardstyledev
 
 # Enable aws cli tab completion
 autoload -Uz compinit && compinit
@@ -65,10 +62,10 @@ fi
 export GPG_TTY=$(tty)
 
 # Aliases
-alias ls="ls -lF --color --group-directories-first"
-alias la="ls -lAF --color --group-directories-first"
+alias ls="ls -lFG"
+alias la="ls -lAFG"
 alias cls="clear; ls"
-alias ag='ag --color-match "0;31" --pager "less -FRSX"'
+alias grep='rg'
 alias ping="prettyping --nolegend"
 alias py="python"
 alias ipy="ipython"
