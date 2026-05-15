@@ -1,12 +1,5 @@
 #!/usr/bin/env bash
 
-DIR="$(cd "$(dirname "$0")" && pwd)"
-
-# Install oh-my-zsh (unattended; keep existing ~/.zshrc — e.g. symlink to dotfiles)
-if [[ ! -d "${ZSH:-$HOME/.oh-my-zsh}" ]]; then
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
-fi
-
 # Install Homebrew if missing, then all packages via brew.sh
 if ! command -v brew &>/dev/null; then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -22,6 +15,12 @@ if ! command -v brew &>/dev/null; then
     done
 fi
 
+# Install oh-my-zsh (unattended; keep existing ~/.zshrc — e.g. symlink to dotfiles)
+if [[ ! -d "${ZSH:-$HOME/.oh-my-zsh}" ]]; then
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
+fi
+
+DIR="$(cd "$(dirname "$0")" && pwd)"
 bash "$DIR/brew.sh"
 
 # Install Python support for Neovim.
@@ -48,7 +47,7 @@ if ! command -v nvim &>/dev/null; then
 fi
 
 # Headless plugin install so the first interactive launch is fast.
-nvim --headless "+Lazy! sync" +qa
+nvim --headless "+lua vim.pack.update()" +qa
 
 # Make default shell is zsh.
 # Make sure the zsh executable exists in /etc/shells.
