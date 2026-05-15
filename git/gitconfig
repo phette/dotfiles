@@ -11,8 +11,8 @@
 [init]
     templatedir = ~/.git-templates
 
-[commit]
-	gpgsign = true
+# [commit]
+#	gpgsign = true
 
 [fetch]
     prune = true
