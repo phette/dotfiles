@@ -24,6 +24,7 @@ brew install neovim
 # Neovim runtime dependencies (includes better grep).
 brew install ripgrep
 brew install fd
+brew install tree-sitter-cli
 brew install lazygit
 
 # Install fonts.
