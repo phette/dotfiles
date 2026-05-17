@@ -1,6 +1,6 @@
 {
     // Editor
-    "editor.fontFamily": "Fira Code",
+    "editor.fontFamily": "FiraCode Nerd Font Mono",
     "editor.fontSize": 12,
     "editor.fontWeight": "600",
     "editor.fontLigatures": true,
@@ -28,7 +28,7 @@
 
     // Terminal
     "terminal.external.osxExec": "iTerm.app",
-    "terminal.integrated.fontFamily": "Fira Code",
+    "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
     "terminal.integrated.fontSize": 12,
     "terminal.integrated.shell.osx": "zsh",
 
@@ -41,7 +41,7 @@
     "extensions.ignoreRecommendations": true,
 
     // Python
-    "python.pythonPath": "~/.pyenv/versions/3.7.3",
+    "python.pythonPath": "~/.pyenv/versions/3.14.5",
     "python.venvPath": "~/.pyenv",
     // "[python]": {"editor.formatOnSave": true},
     "python.formatting.provider": "black",
