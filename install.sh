@@ -30,7 +30,7 @@ pip3 install --upgrade argcomplete
 # Symlink necessary files and directories.
 ln -sfv $DIR/shell/zshrc     $HOME/.zshrc
 ln -sfv $DIR/shell/ripgreprc $HOME/.ripgreprc
-ln -sfv $DIR/git/gitconfig    $HOME/.gitconfig
+ln -sfv $DIR/git/gitconfig   $HOME/.gitconfig
 ln -sfv $DIR/git/gitignore   $HOME/.gitignore
 
 # Symlink kickstart-based Neovim config from dotfiles.
