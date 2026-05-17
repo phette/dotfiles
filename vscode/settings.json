@@ -28,9 +28,9 @@
 
     // Terminal
     "terminal.external.osxExec": "iTerm.app",
+    "terminal.integrated.defaultProfile.osx": "zsh",
     "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
     "terminal.integrated.fontSize": 12,
-    "terminal.integrated.shell.osx": "zsh",
 
     // Search
     "search.smartCase": true,
@@ -40,16 +40,18 @@
     // Extensions
     "extensions.ignoreRecommendations": true,
 
-    // Python
-    "python.pythonPath": "~/.pyenv/versions/3.14.5",
-    "python.venvPath": "~/.pyenv",
-    // "[python]": {"editor.formatOnSave": true},
-    "python.formatting.provider": "black",
-    "python.formatting.blackPath": "~/.pyenv/shims/black",
-    "python.linting.pylintEnabled": false,
-    "python.linting.flake8Enabled": true,
-    "python.linting.flake8Path": "~/.pyenv/shims/flake8",
-    "python.linting.flake8Args": ["--max-line-length=88"],
+    // Python (requires Python, Pylance, and Ruff extensions)
+    "python.defaultInterpreterPath": "${env:HOME}/.pyenv/shims/python",
+    "python.venvPath": "${env:HOME}/.pyenv",
+    "ruff.lineLength": 88,
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.fixAll.ruff": "explicit",
+            "source.organizeImports.ruff": "explicit"
+        }
+    },
 
     // Go
     "go.formatTool": "goimports",
