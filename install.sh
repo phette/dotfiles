@@ -2,7 +2,7 @@
 
 # Install Homebrew if missing, then all packages via brew.sh
 if ! command -v brew &>/dev/null; then
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 # Fresh install leaves brew off PATH for this shell; load shellenv explicitly
@@ -21,7 +21,7 @@ bash "$DIR/brew.sh"
 
 # Install oh-my-zsh (unattended; keep existing ~/.zshrc — e.g. symlink to dotfiles)
 if [[ ! -d "${ZSH:-$HOME/.oh-my-zsh}" ]]; then
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)" "" --unattended --keep-zshrc
 fi
 
 # Pipenv shell completion (register-python-argcomplete); Homebrew pipenv has no extras syntax
