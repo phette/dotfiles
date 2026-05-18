@@ -30,7 +30,8 @@ pip3 install --upgrade argcomplete
 # Symlink necessary files and directories.
 ln -sfv $DIR/shell/zshrc     $HOME/.zshrc
 ln -sfv $DIR/shell/ripgreprc $HOME/.ripgreprc
-ln -sfv $DIR/git/gitconfig   $HOME/.gitconfig
+
+ln -sfv $DIR/git/gitconfig    $HOME/.gitconfig
 ln -sfv $DIR/git/gitignore   $HOME/.gitignore
 
 # Symlink kickstart-based Neovim config from dotfiles.
@@ -46,6 +47,5 @@ fi
 # Headless plugin install so the first interactive launch is fast.
 nvim --headless "+lua vim.pack.update()" +qa
 
-# Make default shell is zsh.
-# Make sure the zsh executable exists in /etc/shells.
+# Make zsh the default shell.
 chsh -s $(which zsh)

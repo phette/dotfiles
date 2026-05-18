@@ -20,5 +20,8 @@ ehthumbs.db
 # VSCode files
 .vscode/
 
+# Per-machine shell overrides (sourced from shell/zshrc)
+shell/zshrc.local
+
 # All log files
 *.log
