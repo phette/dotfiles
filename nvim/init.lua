@@ -299,13 +299,14 @@ do
   -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
   vim.pack.add { gh 'loctvl842/monokai-pro.nvim' }
   require('monokai-pro').setup {
-    filter = 'pro', -- classic, octagon, machine, ristretto, spectrum
     styles = {
       comment = { italic = false },
     },
   }
+  -- In monokai-pro.nvim v2, the colorscheme variant name chooses the filter.
+  -- Use monokai-pro-{classic|octagon|machine|ristretto|spectrum|light}.
+  vim.cmd.colorscheme 'monokai-pro-machine'
 
-  vim.cmd.colorscheme 'monokai-pro'
 
   -- Highlight todo, notes, etc in comments
   vim.pack.add { gh 'folke/todo-comments.nvim' }
