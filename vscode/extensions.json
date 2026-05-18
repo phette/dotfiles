@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "monokai.theme-monokai-pro-vscode",
+    "golang.go",
+    "ms-python.python",
+    "charliermarsh.ruff",
+    "vscodevim.vim",
+    "kddejong.vscode-cfn-lint",
+    "davidnussio.vscode-jq-playground"
+  ]
+}
