@@ -16,7 +16,7 @@
   "workbench.editor.highlightModifiedTabs": true,
 
   "window.autoDetectColorScheme": false,
-  "window.zoomLevel": -1,
+  "window.zoomLevel": 0,
 
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
@@ -36,6 +36,7 @@
   "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
   "terminal.integrated.fontSize": 12,
+  "terminal.integrated.fontWeight": "400",
 
   // -------------------------------------------------------------------------
   // Privacy / extension management
